@@ -9,7 +9,7 @@
     
     <title>
         
-            Nintendo-eShop |
+            Raspi-TimeMachine |
         
         CxBlog
     </title>
@@ -142,7 +142,7 @@
     <div class="article-content-container">
 
         <div class="article-title">
-            <span class="title-hover-animation">Nintendo-eShop</span>
+            <span class="title-hover-animation">Raspi-TimeMachine</span>
         </div>
 
         
@@ -160,7 +160,7 @@
                     <div class="meta-info">
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
-        <i class="fas fa-edit"></i>&nbsp;2021-07-01 03:27:31
+        <i class="fas fa-edit"></i>&nbsp;2021-07-01 04:24:48
     </span>
     
     
@@ -168,12 +168,12 @@
     
     
         <span class="article-wordcount article-meta-item">
-            <i class="fas fa-file-word"></i>&nbsp;<span>78 字</span>
+            <i class="fas fa-file-word"></i>&nbsp;<span>1k 字</span>
         </span>
     
     
         <span class="article-min2read article-meta-item">
-            <i class="fas fa-clock"></i>&nbsp;<span>1 分钟</span>
+            <i class="fas fa-clock"></i>&nbsp;<span>3 分钟</span>
         </span>
     
     
@@ -189,23 +189,21 @@
         
 
         <div class="article-content markdown-body">
-            <h1 id="Nintendo-eShop-美區免稅"><a href="#Nintendo-eShop-美區免稅" class="headerlink" title="Nintendo eShop 美區免稅"></a>Nintendo eShop 美區免稅</h1><p><img  
+            <h1 id="Raspberry-Pi-搭建-TimeCapsule"><a href="#Raspberry-Pi-搭建-TimeCapsule" class="headerlink" title="Raspberry Pi 搭建 TimeCapsule"></a>Raspberry Pi 搭建 TimeCapsule</h1><p>作為macOS的使用者，一定都會知道 “ <a class="link"   target="_blank" rel="noopener" href="https://support.apple.com/zh-tw/HT201250"  title="TimeMachine - Apple ">TimeMachine<i class="fas fa-external-link-alt"></i></a> ” 這個非常好用的備份功能，能夠完整的備份整個系統，且定時增量備份，既節省空間，又能做到隨時回到過去，但是這個功能對於MacBook的用戶就不是特別友好了，需要一直掛著一顆硬碟，佔用接口不說，而且很多時候都會忘記插上硬碟來備份，所以定時備份很難實現，說不定前一個小時忘記備份，結果下一秒意外就發生了。😭<br>不過 TimeMachine 備份還是非常重要的，畢竟不管是升級系統也好，保護重要資料也好，備份都是剛需啊！<br>最終決定使用無線的方式來進行時光機備份，不過相比起群輝（Synology），個人傾向自己在樹莓派上搭建今天的主角 “ TimeCapsule ” 用來作為備份 （主要還是窮）<br>那麼廢話不多說，趕緊來介紹今天所需要用到的材料吧。 😼</p>
+<h2 id="材料"><a href="#材料" class="headerlink" title="材料"></a>材料</h2><ul>
+<li>Raspberry 3B 2GB以上（筆者使用的是4B 4GB）</li>
+<li>一顆 HDD硬碟（1TB+）</li>
+<li>一顆有耐心的心</li>
+<li>一雙能打字的手<h2 id="開始折騰"><a href="#開始折騰" class="headerlink" title="開始折騰"></a>開始折騰</h2><h3 id="更新系統和軟體庫"><a href="#更新系統和軟體庫" class="headerlink" title="更新系統和軟體庫"></a>更新系統和軟體庫</h3>首先，當然是在安裝任何東西之前，要做的第一件事情，就是更新軟體。😁<br><code>sudo apt update &amp;&amp; sudo apt upgrade</code><br>接下來呢，為了讓更新的軟體都能萬無一失的加載上，我們重新啟動一下樹莓派。<br><code>sudo reboot</code><h3 id="分割磁碟區"><a href="#分割磁碟區" class="headerlink" title="分割磁碟區"></a>分割磁碟區</h3></li>
+</ul>
+<p><em>如果整顆都要拿來用的話，就沒必要切了，可以直接跳到部署階段</em><br>首先呢，先列出樹莓派上有那些磁碟（忘記插上磁碟的朋友，現在可以開始動作了）<br><code>lsblk</code><br><img  
                      lazyload
                      src="/images/loading.svg"
-                     data-src="https://drive.bs10081.com/api/v3/file/source/9621/connor-moyle-Yr9Xwb4tZek-unsplash.jpeg?sign=CXeOfbnx_LH3BnEJjaE0LJUSvUipPFfDG651h2EnIYY=:0"
+                     data-src="https://drive.bs10081.com/api/v3/file/source/9632/CleanShot%202021-04-13%20at%2020.29.13@2x.0c278e8d1bf54bce93270198820d9710.png?sign=LownWI6PgS7s5gjKHgQs4fKvnGuG1J5iSz-vmep96Xg=:0"
                      
-                ></p>
-<blockquote>
-<p><a class="link"   target="_blank" rel="noopener" href="https://unsplash.com/photos/Yr9Xwb4tZek" >圖片來源：Unsplash<i class="fas fa-external-link-alt"></i></a></p>
-</blockquote>
-<p>各位在美區Nintendo eShop上購買遊戲的時候，需要提供州地址及郵遞區號，為了避免稅金，在這裡提供五個免稅州和郵遞區號：</p>
-<ul>
-<li>99613 – King Salmon, Alaska</li>
-<li>90090 – Dodger town, California (CA)</li>
-<li>97330 – Corvallis, Oregon</li>
-<li>03222 – New Hampshire, Bristol</li>
-<li>97222 – Milwaukie, Oregon</li>
-</ul>
+                ><br>找到硬碟的代號，像是我掛載的硬碟是<code>sda</code> （圖片裡面其實我都已經做完了所有的步驟了，確定可以用，只是我懶得砍掉重新截圖🌚，所以懂意思就行😂）<br>再來，我們使用<code>fdisk</code>來重新切割這顆硬碟：<br><code>sudo fdisk /dev/sda</code><br>進入<code>fdisk</code> 可以按 <code>m</code>顯示使用說明，硬碟分割流程大概是：<br>輸入兩次<code>d</code> 刪除原先的兩個分區<br>再輸入<code>n</code>新增分區，分區代號以及起始區塊預設，結束區塊<code>+450G</code> (建立一個代號1，450G大小的分區)<br>繼續用<code>n</code> 新增第二分區，一路 <code>Enter</code> 到分割完剩下的空間就行了<br><code>w</code> 寫入硬碟分區資料並退出 fdisk<br>接著再次輸入<code>lsblk</code>查看分割結果是否正確<br><em>fdisk只能分割2TB的硬碟，如果大於2TB，可以使用<a class="link"   target="_blank" rel="noopener" href="https://man.archlinux.org/man/cfdisk.8" > cfdisk <i class="fas fa-external-link-alt"></i></a>來切割。</em></p>
+<h3 id="開始部署"><a href="#開始部署" class="headerlink" title="開始部署"></a>開始部署</h3><p>**首先要格式化分區（依照<code>lsdisk</code>來替換<code>sda2</code>）<br><code>sudo mkfs.ext4 /dev/sda1</code><br><em>這次我們使用的是 ext4 ，是 Linux 比較主流的文件管理格式，速度表現也不錯，不過還有一個 xfs ，據說速度更快，只是我沒測試過</em>🌚<br><strong>建立掛載點</strong><br><code>sudo mkdir /mnt/TimeCapsule</code><br><strong>查看<code>UUID</code>並且複製起來</strong><br><code>sudo blkid</code><br><strong>編輯 fstab 添加掛載所需要的資訊</strong><br><code>sudo vim /etc/fstab</code><br><strong>移動到最後一行，然後輸入這行</strong><br> UUID=用剛剛複製的UUID替換掉 /mnt/TimeCapsule ext4 defaults 0 2<code>**掛載**</code>sudo mount -a<code>**檢查一下**</code>df -h<code>*確定有掛載到 /mnt/TimeCapsule/ 即可* **最後** 給掛載的分區權限，讓之後的程式能夠讀取。</code>chmod 777 /mnt/TimeCapsule/`</p>
+<h3 id="安裝Netatalk"><a href="#安裝Netatalk" class="headerlink" title="安裝Netatalk"></a>安裝Netatalk</h3><p><code>sudo apt install netatalk</code><br><strong>接著編輯nsswitch.conf</strong><br><code>sudo vim /etc/nsswitch.conf</code><br>**找到<code>host</code>那行，在末尾加上<code>mdns4 mdns</code>，看起來會像是這樣👇🏻<br><code>hosts: files mdns4_minimal [NOTFOUND=return] dns mdns4 mdns</code><br>**然後設定<code>afp.conf</code><br><code>sudo vim /etc/netatalk/afp.conf</code><br>**這次要輸入的內容比較長，建議複製貼上😛<br><a class="link"   target="_blank" rel="noopener" href="https://gist.github.com/bs10081/4c65ac5f09ee093cd403c1bd3692be7a" >https://gist.github.com/bs10081/4c65ac5f09ee093cd403c1bd3692be7a<i class="fas fa-external-link-alt"></i></a><br><strong>啟動服務</strong><br><code>sudo service avahi-daemon start</code><br><code>sudo service netatalk start</code><br><strong>基本上這樣就可以了，但是我們為了讓樹莓派重開機也會自動執行這個任務，我們還要設定一下 systemctl。</strong><br><code>sudo systemctl enable avahi-daemon</code><br><code>sudo systemctl enable netatalk</code><br>好啦！折騰這麼久，大家應該都累壞了（（<br>macOS的部分，就應該不需要講解了，如果實在是不會的話，我也不知道你怎麼找到這篇文章的XD。</p>
 
         </div>
 
@@ -213,11 +211,11 @@
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li>本文标题：Nintendo-eShop</li>
+        <li>本文标题：Raspi-TimeMachine</li>
         <li>本文作者：Reg Chien</li>
-        <li>创建时间：2021-07-01 03:27:31</li>
+        <li>创建时间：2021-07-01 04:24:48</li>
         <li>
-            本文链接：https://blog.bs10081.com/2021/07/01/Nintendo-eShop/
+            本文链接：https://blog.bs10081.com/2021/07/01/Raspi-TimeMachine/
         </li>
         <li>
             版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -231,21 +229,21 @@
         
             <div class="article-nav">
                 
-                    <div class="article-prev">
-                        <a class="prev"
-                           rel="prev"
-                           href="/2021/07/01/Raspi-TimeMachine/"
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/2021/07/01/Nintendo-eShop/"
                         >
-                            <span class="left arrow-icon flex-center">
-                              <i class="fas fa-chevron-left"></i>
-                            </span>
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">Raspi-TimeMachine</span>
-                                <span class="post-nav-item">上一篇</span>
+                                <span class="post-nav-title-item">Nintendo-eShop</span>
+                                <span class="post-nav-item">下一篇</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
                             </span>
                         </a>
                     </div>
-                
                 
             </div>
         
@@ -362,7 +360,7 @@
         <aside class="page-aside">
             <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Nintendo-eShop-%E7%BE%8E%E5%8D%80%E5%85%8D%E7%A8%85"><span class="nav-text">Nintendo eShop 美區免稅</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Raspberry-Pi-%E6%90%AD%E5%BB%BA-TimeCapsule"><span class="nav-text">Raspberry Pi 搭建 TimeCapsule</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9D%90%E6%96%99"><span class="nav-text">材料</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%96%8B%E5%A7%8B%E6%8A%98%E9%A8%B0"><span class="nav-text">開始折騰</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9B%B4%E6%96%B0%E7%B3%BB%E7%B5%B1%E5%92%8C%E8%BB%9F%E9%AB%94%E5%BA%AB"><span class="nav-text">更新系統和軟體庫</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%86%E5%89%B2%E7%A3%81%E7%A2%9F%E5%8D%80"><span class="nav-text">分割磁碟區</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%96%8B%E5%A7%8B%E9%83%A8%E7%BD%B2"><span class="nav-text">開始部署</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%9DNetatalk"><span class="nav-text">安裝Netatalk</span></a></li></ol></li></ol></li></ol>
     </div>
 </div>
         </aside>
