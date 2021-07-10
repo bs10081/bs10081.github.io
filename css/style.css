@@ -2012,7 +2012,7 @@ pre .javascript .function {
   box-sizing: border-box;
   width: 100%;
   overflow: hidden;
-  background: url("https://drive.bs10081.com/api/v3/file/source/1329/raychan-3_gyAnCIeog-unsplash.jpeg?sign=IVkAFH42s27Cb7ybf3-CuAbVC-2AUnZwU91SffOZxfY%3D%3A0") center center/cover no-repeat;
+  background: url("/images/bg.svg") center center/cover no-repeat;
   background-position-y: 70px;
 }
 @media (max-width: 780px) {

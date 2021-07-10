@@ -9,7 +9,7 @@
     
     <title>
         
-            關於CxDrive |
+            關於 CxDrive |
         
         CxBlog
     </title>
@@ -21,7 +21,7 @@
     <script id="hexo-configurations">
     let KEEP = window.KEEP || {};
     KEEP.hexo_config = {"hostname":"blog.bs10081.com","root":"/","language":"zh-CN","path":"search.json"};
-    KEEP.theme_config = {"toc":{"enable":true,"number":false,"expand_all":false,"init_open":true},"style":{"primary_color":"#0066CC","avatar":"https://drive.bs10081.com/api/v3/file/source/9630/Avatar.jpg?sign=7pK-jHw5WNUMQc7sNeL-3IoFfTlBSc4H8Yru44hhe7U%3D%3A0","favicon":"https://drive.bs10081.com/api/v3/file/source/9630/Avatar.jpg?sign=7pK-jHw5WNUMQc7sNeL-3IoFfTlBSc4H8Yru44hhe7U%3D%3A0","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":false,"scale":false},"first_screen":{"enable":true,"background_img":"https://drive.bs10081.com/api/v3/file/source/1329/raychan-3_gyAnCIeog-unsplash.jpeg?sign=IVkAFH42s27Cb7ybf3-CuAbVC-2AUnZwU91SffOZxfY%3D%3A0","description":"生命或許會凋零，可記憶永存人心。"},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":true}}},"local_search":{"enable":true,"preload":true},"code_copy":{"enable":true,"style":"mac"},"pjax":{"enable":true},"lazyload":{"enable":false},"version":"3.4.3"};
+    KEEP.theme_config = {"toc":{"enable":true,"number":false,"expand_all":false,"init_open":true},"style":{"primary_color":"#0066CC","avatar":"https://drive.bs10081.com/api/v3/file/source/9630/Avatar.jpg?sign=7pK-jHw5WNUMQc7sNeL-3IoFfTlBSc4H8Yru44hhe7U%3D%3A0","favicon":"https://drive.bs10081.com/api/v3/file/source/9630/Avatar.jpg?sign=7pK-jHw5WNUMQc7sNeL-3IoFfTlBSc4H8Yru44hhe7U%3D%3A0","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":false,"scale":false},"first_screen":{"enable":true,"background_img":"/images/bg.svg","description":"生命或許會凋零，可記憶永存人心。"},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":true}}},"local_search":{"enable":true,"preload":true},"code_copy":{"enable":true,"style":"mac"},"pjax":{"enable":true},"lazyload":{"enable":false},"version":"3.4.3"};
     KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 月前","year":"%s 年前"};
   </script>
 <meta name="generator" content="Hexo 5.4.0"></head>
@@ -181,7 +181,7 @@
     <div class="article-content-container">
 
         <div class="article-title">
-            <span class="title-hover-animation">關於CxDrive</span>
+            <span class="title-hover-animation">關於 CxDrive</span>
         </div>
 
         
@@ -235,11 +235,11 @@
         
 
         <div class="article-content markdown-body">
-            <p><img src="https://cdn.jsdelivr.net/gh/bs10081/image-hosting@master/20210709/image.6elbhs1ub800.png" alt="image"></p>
+            <p>由於百度、城通等大眾網盤的糟糕使用體驗，加上Google Drive for Edu的<a class="link"   target="_blank" rel="noopener" href="https://support.google.com/a/answer/10431555?hl=zh-Hant" >空間容量限縮<i class="fas fa-external-link-alt"></i></a>，不得已尋找其他的出路，在嘗試了115、Mega、pCloud之後，總覺得還是有許多地方不太滿意，於是乎…</p>
+<p><img src="https://cdn.jsdelivr.net/gh/bs10081/image-hosting@master/20210709/image.6elbhs1ub800.png" alt="image"></p>
 <blockquote>
 <p>圖片取自：<a class="link"   target="_blank" rel="noopener" href="https://drive.bs10081.com/s/jOiL" >CxDrive<i class="fas fa-external-link-alt"></i></a></p>
 </blockquote>
-<p>由於百度、城通等大眾網盤的糟糕使用體驗，加上Google Drive for Edu的<a class="link"   target="_blank" rel="noopener" href="https://support.google.com/a/answer/10431555?hl=zh-Hant" >空間容量限縮<i class="fas fa-external-link-alt"></i></a>，不得已尋找其他的出路，在嘗試了115、Mega、pCloud之後，總覺得還是有許多地方不太滿意，於是乎…</p>
 <hr>
 <h2 id="CxDrive"><a href="#CxDrive" class="headerlink" title="CxDrive"></a><a target="_blank" rel="noopener" href="https://drive.bs10081.com/"><strong>CxDrive</strong></a></h2><p>一個由我自己一手打造的網盤服務，就此誕生，使用由Go語言所打造的 <a class="link"   target="_blank" rel="noopener" href="https://github.com/cloudreve/cloudreve" >Cloudreve<i class="fas fa-external-link-alt"></i></a> 作為我的網盤系統，實際體驗下來，不愧是Go語言，響應速度非常快（比起之前用PHP的NextCloud好太多了），那麼現在問題就來啦，我網盤架設在樹莓派4B上，但是家用帶寬只有120/30Mbps的小水管，這個網速…自己用都不太夠吧？還想要分給別人？？做夢呢。</p>
 <p>不過不怕，這就是為什麼選擇Cloudreve的原因啦，Cloudreve支持掛載主流的雲存儲方案，如OneDrive、AWS S3、七牛、阿里雲OSS、又拍雲，這樣既解決了家用帶寬的網速問題，也解決了空間容量不足的問題。</p>
@@ -260,7 +260,7 @@
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li>本文标题：關於CxDrive</li>
+        <li>本文标题：關於 CxDrive</li>
         <li>本文作者：Reg Chien</li>
         <li>创建时间：2021-07-10 16:38:27</li>
         <li>
