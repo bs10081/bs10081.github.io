@@ -2012,7 +2012,7 @@ pre .javascript .function {
   box-sizing: border-box;
   width: 100%;
   overflow: hidden;
-  background: url("/images/bg.svg") center center/cover no-repeat;
+  background: url("https://cdn.jsdelivr.net/gh/bs10081/image-hosting@master/20210701/jj-ying-7JX0-bfiuxQ-unsplash.lcx65onqpls.jpg") center center/cover no-repeat;
   background-position-y: 70px;
 }
 @media (max-width: 780px) {
