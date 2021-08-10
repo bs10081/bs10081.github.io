@@ -202,6 +202,17 @@
         <i class="fas fa-edit"></i>&nbsp;2021-07-10 16:38:27
     </span>
     
+        <span class="article-categories article-meta-item">
+            <i class="fas fa-folder"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/categories/CxService/">CxService</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
     
         <span class="article-tags article-meta-item">
             <i class="fas fa-tags"></i>&nbsp;
@@ -218,7 +229,7 @@
     
     
         <span class="article-wordcount article-meta-item">
-            <i class="fas fa-file-word"></i>&nbsp;<span>699 字</span>
+            <i class="fas fa-file-word"></i>&nbsp;<span>686 字</span>
         </span>
     
     
@@ -236,25 +247,22 @@
 
         <div class="article-content markdown-body">
             <p>由於百度、城通等大眾網盤的糟糕使用體驗，加上Google Drive for Edu的<a class="link"   target="_blank" rel="noopener" href="https://support.google.com/a/answer/10431555?hl=zh-Hant" >空間容量限縮<i class="fas fa-external-link-alt"></i></a>，不得已尋找其他的出路，在嘗試了115、Mega、pCloud之後，總覺得還是有許多地方不太滿意，於是乎…</p>
-<p><img src="https://cdn.jsdelivr.net/gh/bs10081/image-hosting@master/20210810/CxDrive.4nmdrrgcmdy0.png" alt="CxDrive"></p>
-<blockquote>
-<p>圖片取自：<a class="link"   target="_blank" rel="noopener" href="https://drive.bs10081.com/s/jOiL" >CxDrive<i class="fas fa-external-link-alt"></i></a></p>
-</blockquote>
+<p><img src="https://cdn.jsdelivr.net/gh/bs10081/image-hosting@master/20210709/image.6elbhs1ub800.png" alt="image"></p>
 <hr>
-<h2 id="CxDrive"><a href="#CxDrive" class="headerlink" title="CxDrive"></a><a target="_blank" rel="noopener" href="https://drive.bs10081.com/"><strong>CxDrive</strong></a></h2><p>一個由我自己一手架設的網盤服務，就此誕生，使用由Go語言所打造的 <a class="link"   target="_blank" rel="noopener" href="https://github.com/cloudreve/cloudreve" >Cloudreve<i class="fas fa-external-link-alt"></i></a> 作為我的網盤系統，實際體驗下來，不愧是Go語言，響應速度非常快（比起之前用PHP的NextCloud好太多了），那麼現在問題就來啦，我網盤架設在樹莓派4B上，但是家用帶寬只有120/30Mbps的小水管，這個網速…自己用都不太夠吧？還想要分給別人？？做夢呢。</p>
+<p>一個由我自己一手架設的網盤服務，就此誕生，使用由Go語言所打造的 <a class="link"   target="_blank" rel="noopener" href="https://github.com/cloudreve/cloudreve" >Cloudreve<i class="fas fa-external-link-alt"></i></a> 作為我的網盤系統，實際體驗下來，不愧是Go語言，響應速度非常快（比起之前用PHP的NextCloud好太多了），那麼現在問題就來啦，我網盤架設在樹莓派4B上，但是家用帶寬只有120/30Mbps的小水管，這個網速…自己用都不太夠吧？還想要分給別人？？做夢呢。</p>
 <p>不過不怕，這就是為什麼選擇Cloudreve的原因啦，Cloudreve支持掛載主流的雲存儲方案，如OneDrive、AWS S3、七牛、阿里雲OSS、又拍雲，這樣既解決了家用帶寬的網速問題，也解決了空間容量不足的問題。</p>
 <p><img src="https://cdn.jsdelivr.net/gh/bs10081/image-hosting@master/20210709/image.38k5os5qa5e0.png" alt="image"></p>
 <blockquote>
 <p>圖片取自：<a class="link"   target="_blank" rel="noopener" href="https://cloudreve.org/" >Cloudreve<i class="fas fa-external-link-alt"></i></a></p>
 </blockquote>
-<p>基於以上的各種功能，就有了目前的CxDrive，為了平衡速度與成本，我選擇使用微軟家的OneDrive來作為我的存儲方案，且同時使用世紀互聯及國際版，保證了全球訪問的速度。</p>
-<p>目前CxDrive免費用戶提供了50GB的世紀互聯存儲容量，<del>暫時沒有付費方案</del>，免費用戶也能使用分享功能，但是請勿分享違反著作權及當地法律的內容，經舉報，將採取無預警封號刪檔處理。</p>
+<h3 id="實際速度表現"><a href="#實際速度表現" class="headerlink" title="實際速度表現"></a>實際速度表現</h3><p>基於以上的各種功能，就有了目前的CxDrive，為了平衡速度與成本，我選擇使用微軟家的OneDrive來作為我的存儲方案，且同時使用世紀互聯及國際版，保證了全球訪問的速度。</p>
+<p>目前CxDrive免費用戶提供了50GB的世紀互聯存儲容量，<del>暫時沒有付費方案</del>，免費用戶也能使用分享功能，不過請不要利用CxDrive分享違反著作權及當地法律的內容，經發現，不通知，直接採取封號刪檔處理。</p>
 <blockquote>
 <p>分享檔案請記得使用加密及限時功能</p>
 </blockquote>
 <hr>
-<h2 id="付費功能"><a href="#付費功能" class="headerlink" title="付費功能"></a>付費功能</h2><p>目前CxDrive有資金能維持正常運轉，都要感謝黃總和超超等人的支持，使得這個項目能繼續下去，對於支持我的內測用戶，都將贈送1TB的永久空間，未來規劃開通離線下載及高速WebDav等功能，這些功能都將優先供給給內測用戶使用。</p>
-<h3 id="容量包價格"><a href="#容量包價格" class="headerlink" title="容量包價格"></a>容量包價格</h3><p><img src="https://cdn.jsdelivr.net/gh/bs10081/image-hosting@master/20210810/CxDrive.72a7pzznz680.png" alt="CxDrive"></p>
+<h2 id="高級功能"><a href="#高級功能" class="headerlink" title="高級功能"></a>高級功能</h2><p>目前CxDrive有資金能維持正常運轉，都要感謝黃總和超超等人的支持，使得這個項目能繼續下去，對於支持我的內測用戶，都將贈送1TB的永久空間，未來規劃開通離線下載及高速WebDav等功能，這些功能都將優先供給給內測用戶使用。</p>
+<h3 id="容量包價格"><a href="#容量包價格" class="headerlink" title="容量包價格"></a>容量包價格</h3><p><img src=":/cabbc58fc8d14cde88bfc00837caf610" alt="789d8d18bfd1c94ddfbf97b64cffabb0.png"></p>
 <h3 id="會員"><a href="#會員" class="headerlink" title="會員"></a>會員</h3><p><em>尚未開通，敬請期待。</em></p>
 <ul>
 <li>離線下載</li>
@@ -263,7 +271,7 @@
 <li>在線壓縮/解壓縮</li>
 </ul>
 <h3 id="積分"><a href="#積分" class="headerlink" title="積分"></a>積分</h3><p>CxDrive的貨幣單位，比例為 1 RMB : 100，可用於購買容量包、會員和積分鏈接，支持變現。</p>
-<h3 id="付款渠道"><a href="#付款渠道" class="headerlink" title="付款渠道"></a>付款渠道</h3><p>目前只支持比較原始的人工驗證付款，通過支付寶掃碼的方式。</p>
+<h3 id="付款渠道"><a href="#付款渠道" class="headerlink" title="付款渠道"></a>付款渠道</h3><p><em>內測中，咱還不支持</em></p>
 <h3 id="激活碼"><a href="#激活碼" class="headerlink" title="激活碼"></a>激活碼</h3><p>可以通過激活碼的方式獲取積分、會員、容量包，是CxDrive的主要交易管道。</p>
 <ul>
 <li><em>盲盒👇</em></li>
@@ -429,7 +437,7 @@
         <aside class="page-aside">
             <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#CxDrive"><span class="nav-text">CxDrive</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%98%E8%B2%BB%E5%8A%9F%E8%83%BD"><span class="nav-text">付費功能</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%B9%E9%87%8F%E5%8C%85%E5%83%B9%E6%A0%BC"><span class="nav-text">容量包價格</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9C%83%E5%93%A1"><span class="nav-text">會員</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A9%8D%E5%88%86"><span class="nav-text">積分</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%98%E6%AC%BE%E6%B8%A0%E9%81%93"><span class="nav-text">付款渠道</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%BF%80%E6%B4%BB%E7%A2%BC"><span class="nav-text">激活碼</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#CxDrive%E5%82%B3%E9%80%81%E9%96%80"><span class="nav-text">CxDrive傳送門</span></a></li></ol></li></ol></li></ol></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%A6%E9%9A%9B%E9%80%9F%E5%BA%A6%E8%A1%A8%E7%8F%BE"><span class="nav-text">實際速度表現</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%AB%98%E7%B4%9A%E5%8A%9F%E8%83%BD"><span class="nav-text">高級功能</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%B9%E9%87%8F%E5%8C%85%E5%83%B9%E6%A0%BC"><span class="nav-text">容量包價格</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9C%83%E5%93%A1"><span class="nav-text">會員</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A9%8D%E5%88%86"><span class="nav-text">積分</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%98%E6%AC%BE%E6%B8%A0%E9%81%93"><span class="nav-text">付款渠道</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%BF%80%E6%B4%BB%E7%A2%BC"><span class="nav-text">激活碼</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#CxDrive%E5%82%B3%E9%80%81%E9%96%80"><span class="nav-text">CxDrive傳送門</span></a></li></ol></li></ol></li></ol>
     </div>
 </div>
         </aside>
