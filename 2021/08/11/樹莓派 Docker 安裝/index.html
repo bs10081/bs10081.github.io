@@ -9,7 +9,7 @@
     
     <title>
         
-            归档: 2021/7 |
+            樹莓派 Docker 安裝 |
         
         CxBlog
     </title>
@@ -72,7 +72,7 @@
                         </li>
                     
                         <li class="menu-item">
-                            <a class="active"
+                            <a class=""
                                href="/archives"
                             >
                                 归档
@@ -130,7 +130,7 @@
                 </li>
             
                 <li class="drawer-menu-item flex-center">
-                    <a class="active"
+                    <a class=""
                        href="/archives">归档</a>
                 </li>
             
@@ -165,52 +165,137 @@
 
                 
                     <div class="fade-in-down-animation">
-    <div class="archive-container ">
+    <div class="article-content-container">
+
+        <div class="article-title">
+            <span class="title-hover-animation">樹莓派 Docker 安裝</span>
+        </div>
+
         
-<div class="archive-list-container">
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="https://drive.bs10081.com/api/v3/file/source/9630/Avatar.jpg?sign=7pK-jHw5WNUMQc7sNeL-3IoFfTlBSc4H8Yru44hhe7U=:0">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">Reg Chien</span>
+                        
+                            <span class="author-label">柴</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;2021-08-11 00:14:34
+    </span>
     
-        <section class="archive-item">
-            <div class="archive-item-header">
-                <span class="archive-year">2021</span>
-                <span class="archive-year-post-count">[4]</span>
-            </div>
-            <ul class="article-list">
+    
+        <span class="article-tags article-meta-item">
+            <i class="fas fa-tags"></i>&nbsp;
+            <ul>
                 
-                    <li class="article-item">
-                        <a class="article-title"
-                           href="/2021/08/11/%E6%A8%B9%E8%8E%93%E6%B4%BE%20Docker%20%E5%AE%89%E8%A3%9D/"
-                        >樹莓派 Docker 安裝</a>
-                        <span class="article-date">08-11</span>
-                    </li>
-                
-                    <li class="article-item">
-                        <a class="article-title"
-                           href="/2021/08/09/%E9%96%8B%E6%BA%90%E7%AD%86%E8%A8%98%E8%BB%9F%E9%AB%94%20Joplin/"
-                        >開源筆記軟體 Joplin</a>
-                        <span class="article-date">08-09</span>
-                    </li>
-                
-                    <li class="article-item">
-                        <a class="article-title"
-                           href="/2021/07/10/CxDrive/"
-                        >關於 CxDrive</a>
-                        <span class="article-date">07-10</span>
-                    </li>
-                
-                    <li class="article-item">
-                        <a class="article-title"
-                           href="/2021/07/01/Nintendo%20eShop%20%E7%BE%8E%E5%8D%80%E5%85%8D%E7%A8%85/"
-                        >Nintendo eShop 美區免稅</a>
-                        <span class="article-date">07-01</span>
+                    <li>
+                        <a href="/tags/Docker/">Docker</a>&nbsp;
                     </li>
                 
             </ul>
-        </section>
+        </span>
+    
+
+    
+    
+        <span class="article-wordcount article-meta-item">
+            <i class="fas fa-file-word"></i>&nbsp;<span>319 字</span>
+        </span>
+    
+    
+        <span class="article-min2read article-meta-item">
+            <i class="fas fa-clock"></i>&nbsp;<span>1 分钟</span>
+        </span>
+    
     
 </div>
 
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <p>Docker是一個廣泛運用在Linux系統的環境容器，全球擁有1100+的開發者、700萬+的應用、每個月130億+的 image下載量。 <img src="https://raw.githubusercontent.com/bs10081/image-hosting/master/20210810/Docker.5x29hhtanqo0.png" alt="Docker"></p>
+<blockquote>
+<p>圖片來源 <a class="link"   target="_blank" rel="noopener" href="https://docker.com/" >Docker<i class="fas fa-external-link-alt"></i></a></p>
+</blockquote>
+<h2 id="Docker-原理"><a href="#Docker-原理" class="headerlink" title="Docker 原理"></a>Docker 原理</h2><p>Docke通過使用Linux內核及內核功能（Cgroups和namespaces）來分隔進程，以便各進程獨立運行。使得容器能夠不受干擾，獨立運行多種服務，充分發揮裝置的性能與價值，在擁有這些優點的情況下，還能夠保證各個容器之間的安全性。 <img src="https://cdn.jsdelivr.net/gh/bs10081/image-hosting@master/20210810/Docker.43m49de465c0.png" alt="Docker"> <img src="https://cdn.jsdelivr.net/gh/bs10081/image-hosting@master/20210810/Docker.7ce4y5lzv2s0.png" alt="Docker"></p>
+<blockquote>
+<p>圖片來源 <a class="link"   target="_blank" rel="noopener" href="https://draveness.me/docker/" >Draveness<i class="fas fa-external-link-alt"></i></a></p>
+</blockquote>
+<p>有興趣瞭解更加詳細的原理，可以參考 <a class="link"   target="_blank" rel="noopener" href="https://draveness.me/docker/" >https://draveness.me/docker/<i class="fas fa-external-link-alt"></i></a> 這篇文章，有很詳細的講解。</p>
+<h2 id="教程"><a href="#教程" class="headerlink" title="教程"></a>教程</h2><h3 id="Docker-安裝"><a href="#Docker-安裝" class="headerlink" title="Docker 安裝"></a>Docker 安裝</h3><p><code>sudo apt update &amp;&amp; sudo apt upgrade</code></p>
+<p>首先我們先更新一下軟體源和軟體。</p>
+<p><code>curl -sSL httos://get.docker.com | sh</code></p>
+<p>通過curl獲取docker安裝腳本，並且通過sh執行。</p>
+<p><code>sudo usermod -aG docker $&#123;USER&#125;</code></p>
+<p>將目前的使用者添加到docker用戶組。</p>
+<p><code>sudo restart now</code></p>
+<p>然後Restart樹莓派。</p>
+<hr>
+<p>這樣一來，Docker就安裝好了，接著來安裝docker-compose。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install libffi-dev libsll-dev</span><br><span class="line"></span><br><span class="line">sudo apt install python3-dev</span><br><span class="line"></span><br><span class="line">sudo apt install -y python3 python3-pip</span><br><span class="line"></span><br><span class="line">sudo pip3 install docker-compose</span><br></pre></td></tr></table></figure>
+
+<p>如此一來，就在樹莓派上完成了Docker的安裝。</p>
+<h4 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h4><ul>
+<li><a class="link"   target="_blank" rel="noopener" href="https://docker.com/" >Docker<i class="fas fa-external-link-alt"></i></a></li>
+<li><a class="link"   target="_blank" rel="noopener" href="https://draveness.me/docker/" >Docker核心技術與實現原理<i class="fas fa-external-link-alt"></i></a></li>
+</ul>
+
+        </div>
+
+        
+            <div class="post-copyright-info">
+                <div class="article-copyright-info-container">
+    <ul>
+        <li>本文标题：樹莓派 Docker 安裝</li>
+        <li>本文作者：Reg Chien</li>
+        <li>创建时间：2021-08-11 00:14:34</li>
+        <li>
+            本文链接：https://blog.bs10081.com/2021/08/11/樹莓派 Docker 安裝/
+        </li>
+        <li>
+            版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
+        </li>
+    </ul>
+</div>
+
+            </div>
+        
+
+        
+            <div class="article-nav">
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/2021/08/09/%E9%96%8B%E6%BA%90%E7%AD%86%E8%A8%98%E8%BB%9F%E9%AB%94%20Joplin/"
+                        >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">開源筆記軟體 Joplin</span>
+                                <span class="post-nav-item">下一篇</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+        
     </div>
 </div>
+
 
                 
             </div>
@@ -238,6 +323,23 @@
         </div>
     </div>
 
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fas fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+    </ul>
+</div>
+
+        </div>
     
 
     <div class="right-bottom-side-tools">
@@ -284,6 +386,14 @@
 
     </div>
 
+    
+        <aside class="page-aside">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Docker-%E5%8E%9F%E7%90%86"><span class="nav-text">Docker 原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%99%E7%A8%8B"><span class="nav-text">教程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Docker-%E5%AE%89%E8%A3%9D"><span class="nav-text">Docker 安裝</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8F%83%E8%80%83%E8%B3%87%E6%96%99"><span class="nav-text">參考資料</span></a></li></ol></li></ol></li></ol>
+    </div>
+</div>
+        </aside>
     
 
     <div class="image-viewer-container">
@@ -339,6 +449,8 @@
 
 
 <div class="post-scripts pjax">
+    
+        <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/left-side-toggle.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/libs/anime.min.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/toc.js"></script>
     
 </div>
 
