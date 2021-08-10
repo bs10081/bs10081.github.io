@@ -9,7 +9,7 @@
     
     <title>
         
-            樹莓派 Docker 安裝 |
+            Raspiberry Pi 搭建 Seafile 同步盤 |
         
         CxBlog
     </title>
@@ -168,7 +168,7 @@
     <div class="article-content-container">
 
         <div class="article-title">
-            <span class="title-hover-animation">樹莓派 Docker 安裝</span>
+            <span class="title-hover-animation">Raspiberry Pi 搭建 Seafile 同步盤</span>
         </div>
 
         
@@ -186,7 +186,7 @@
                     <div class="meta-info">
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
-        <i class="fas fa-edit"></i>&nbsp;2021-08-11 00:14:34
+        <i class="fas fa-edit"></i>&nbsp;2021-08-11 01:00:01
     </span>
     
     
@@ -195,7 +195,7 @@
             <ul>
                 
                     <li>
-                        <a href="/tags/Docker/">Docker</a>&nbsp;
+                        <a href="/tags/%E7%B6%B2%E7%9B%A4/">網盤</a>&nbsp;
                     </li>
                 
             </ul>
@@ -205,12 +205,12 @@
     
     
         <span class="article-wordcount article-meta-item">
-            <i class="fas fa-file-word"></i>&nbsp;<span>319 字</span>
+            <i class="fas fa-file-word"></i>&nbsp;<span>880 字</span>
         </span>
     
     
         <span class="article-min2read article-meta-item">
-            <i class="fas fa-clock"></i>&nbsp;<span>1 分钟</span>
+            <i class="fas fa-clock"></i>&nbsp;<span>3 分钟</span>
         </span>
     
     
@@ -222,31 +222,42 @@
         
 
         <div class="article-content markdown-body">
-            <p>Docker是一個廣泛運用在Linux系統的環境容器，全球擁有1100+的開發者、700萬+的應用、每個月130億+的 image下載量。 <img src="https://raw.githubusercontent.com/bs10081/image-hosting/master/20210810/Docker.5x29hhtanqo0.png" alt="Docker"></p>
-<blockquote>
-<p>圖片來源 <a class="link"   target="_blank" rel="noopener" href="https://docker.com/" >Docker<i class="fas fa-external-link-alt"></i></a></p>
-</blockquote>
-<h2 id="Docker-原理"><a href="#Docker-原理" class="headerlink" title="Docker 原理"></a>Docker 原理</h2><p>Docke通過使用Linux內核及內核功能（Cgroups和namespaces）來分隔進程，以便各進程獨立運行。使得容器能夠不受干擾，獨立運行多種服務，充分發揮裝置的性能與價值，在擁有這些優點的情況下，還能夠保證各個容器之間的安全性。 <img src="https://cdn.jsdelivr.net/gh/bs10081/image-hosting@master/20210810/Docker.43m49de465c0.png" alt="Docker"> <img src="https://cdn.jsdelivr.net/gh/bs10081/image-hosting@master/20210810/Docker.7ce4y5lzv2s0.png" alt="Docker"></p>
-<blockquote>
-<p>圖片來源 <a class="link"   target="_blank" rel="noopener" href="https://draveness.me/docker/" >Draveness<i class="fas fa-external-link-alt"></i></a></p>
-</blockquote>
-<p>有興趣瞭解更加詳細的原理，可以參考 <a class="link"   target="_blank" rel="noopener" href="https://draveness.me/docker/" >https://draveness.me/docker/<i class="fas fa-external-link-alt"></i></a> 這篇文章，有很詳細的講解。</p>
-<h2 id="教程"><a href="#教程" class="headerlink" title="教程"></a>教程</h2><h3 id="Docker-安裝"><a href="#Docker-安裝" class="headerlink" title="Docker 安裝"></a>Docker 安裝</h3><p><code>sudo apt update &amp;&amp; sudo apt upgrade</code></p>
-<p>首先我們先更新一下軟體源和軟體。</p>
-<p><code>curl -sSL httos://get.docker.com | sh</code></p>
-<p>通過curl獲取docker安裝腳本，並且通過sh執行。</p>
-<p><code>sudo usermod -aG docker $&#123;USER&#125;</code></p>
-<p>將目前的使用者添加到docker用戶組。</p>
-<p><code>sudo restart now</code></p>
-<p>然後Restart樹莓派。</p>
-<hr>
-<p>這樣一來，Docker就安裝好了，接著來安裝docker-compose。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install libffi-dev libsll-dev</span><br><span class="line"></span><br><span class="line">sudo apt install python3-dev</span><br><span class="line"></span><br><span class="line">sudo apt install -y python3 python3-pip</span><br><span class="line"></span><br><span class="line">sudo pip3 install docker-compose</span><br></pre></td></tr></table></figure>
+            <p>原本在樹莓派上使用NextCloud作為同步盤，可由於NextCloud PHP設定麻煩，以及最主要的，NextCloud的性能過於低下，對於樹莓派來說，非常不友善，所以下定決心另外尋求解決辦法。</p>
+<p>由於先前有使用Cloudreve搭建了<a href="https://blog.bs10081.com/2021/07/10/CxDrive/" title="關於CxDrive">CxDrive</a>，所以對於大容量存儲並無很大的要求，反而對於小文件同步有著明確的要求，例如PDF、docx、keynote等等各式文檔，以及Minecraft小地圖的多設備同步，這些檔案的大小都普遍偏小，不過需要有十足的即時性，所以最終選擇使用<a class="link"   target="_blank" rel="noopener" href="https://seafile.com/"  title="Seafile">Seafile<i class="fas fa-external-link-alt"></i></a>作為所選方案。 <img src="https://cdn.jsdelivr.net/gh/bs10081/image-hosting@master/20210809/Seafile.3m0sq1955hm0.png" alt="Seafile"></p>
+<h2 id="關於Seafile"><a href="#關於Seafile" class="headerlink" title="關於Seafile"></a>關於Seafile</h2><p>Seafile是2012年於北京創立的的企業私有雲存儲公司，主要提供企業私有雲存儲解決方案，主打安全、移動、便捷的企業協作環境。</p>
+<p>方案分為<a class="link"   target="_blank" rel="noopener" href="https://github.com/haiwen/seafile"  title="Seafile GitHub page">開源社區版<i class="fas fa-external-link-alt"></i></a>及專業版，其中社區版在GitHub擁有 ⭐️8.8k（截至2021.08.06），功能差異如下👇 <img src="https://cdn.jsdelivr.net/gh/bs10081/image-hosting@master/20210809/Seafile.3pz6d5jr10a0.png" alt="Seafile"> 對於個人解決方案來說，社區版的功能綽綽有餘。</p>
+<h3 id="優缺點（社區版）"><a href="#優缺點（社區版）" class="headerlink" title="優缺點（社區版）"></a>優缺點（社區版）</h3><h4 id="優點"><a href="#優點" class="headerlink" title="優點"></a>優點</h4><ul>
+<li>自定義資料庫同步間隔（秒級調整）</li>
+<li>文件歷史版本紀錄</li>
+<li>可同步本機原有資料夾</li>
+<li>跨平台（macOS、Linux、Windows、iOS、android、Web）</li>
+<li>分享連結加密及限時過期</li>
+<li>資料庫本地加密（Web瀏覽，密碼僅在伺服器上存活一小時）</li>
+</ul>
+<h4 id="缺點"><a href="#缺點" class="headerlink" title="缺點"></a>缺點</h4><ul>
+<li>Web端簡陋</li>
+<li>Web端無法上傳資料夾</li>
+<li>沒有搜索功能</li>
+<li>無法通過link共享資料夾，連結只能設定上傳或者下載，無法合併在一個link裡面</li>
+</ul>
+<h3 id="教程開始"><a href="#教程開始" class="headerlink" title="教程開始"></a>教程開始</h3><p>樹莓派搭建Seafile有多種方式，官方提供的是原生安裝，可以參考<a class="link"   target="_blank" rel="noopener" href="https://github.com/haiwen/seafile-rpi" >官方文件<i class="fas fa-external-link-alt"></i></a>進行編譯，不過本文選擇使用Docker來架設Seafile，畢竟我懶癌晚期了，一來Docker方便管理，二來Docker不需要手動一條一條編譯，一鍵啟動，比較傻瓜式。</p>
+<h4 id="安裝Docker-amp-docker-compose"><a href="#安裝Docker-amp-docker-compose" class="headerlink" title="安裝Docker &amp; docker-compose"></a>安裝Docker &amp; docker-compose</h4><p>參考往期 <a href="https://blog.bs10081.com/2021/08/11/%E6%A8%B9%E8%8E%93%E6%B4%BE%20Docker%20%E5%AE%89%E8%A3%9D/">Docker教學</a></p>
+<h4 id="部署Docker鏡像"><a href="#部署Docker鏡像" class="headerlink" title="部署Docker鏡像"></a>部署Docker鏡像</h4><p>網路上找了好久，大多數image都發黴了，沒辦法啟動，不過好在，最後找到了jmujmu所編譯的image，直接從seafile的docker image上進行fork，版本新，並且能夠完美在樹莓派上執行。</p>
+<ol>
+<li> 首先創建一個給seafile的資料夾 <code>mkdir seafile</code> <code>cd seafile</code></li>
+<li> 建立docker-compose.yml <code>vi docker-compose.yml</code></li>
+<li> 修改xxxx（包含資料庫帳號、密碼，網域等）</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line">version: &#x27;2.0&#x27;</span><br><span class="line">services:</span><br><span class="line">  db:</span><br><span class="line">    image: mariadb:10.5</span><br><span class="line">    container_name: seafile-mysql</span><br><span class="line">    environment:</span><br><span class="line">      - MYSQL_ROOT_PASSWORD=xxxx  # Requested, set the root&#x27;s password of MySQL service.</span><br><span class="line">      - MYSQL_LOG_CONSOLE=true</span><br><span class="line">    volumes:</span><br><span class="line">      - /opt/seafile-mysql/db:/var/lib/mysql  # Requested, specifies the path to MySQL data persistent store.</span><br><span class="line">    networks:</span><br><span class="line">      - seafile-net</span><br><span class="line"></span><br><span class="line">  memcached:</span><br><span class="line">    image: memcached:1.5.6</span><br><span class="line">    container_name: seafile-memcached</span><br><span class="line">    entrypoint: memcached -m 256</span><br><span class="line">    networks:</span><br><span class="line">      - seafile-net</span><br><span class="line">          </span><br><span class="line">  seafile:</span><br><span class="line">    image: jmujmu/seafile-pi:8.0.3</span><br><span class="line">    container_name: seafile</span><br><span class="line">    ports:</span><br><span class="line">      - &quot;8003:80&quot;</span><br><span class="line">      - &quot;8001:443&quot;  # If https is enabled, cancel the comment.</span><br><span class="line">    volumes:</span><br><span class="line">      - /seafile-data:/shared   # Requested, specifies the path to Seafile data persistent store.</span><br><span class="line">      - /docker/ssl:/etc/ssl</span><br><span class="line">    environment:</span><br><span class="line">      - DB_HOST=db</span><br><span class="line">      - DB_ROOT_PASSWD=xxxx # Requested, the value shuold be root&#x27;s password of MySQL service.</span><br><span class="line">      - TIME_ZONE=Asia/Shanghai # Optional, default is UTC. Should be uncomment and set to your local time zone.</span><br><span class="line">      - SEAFILE_ADMIN_EMAIL=admin@xxxx.com # Specifies Seafile admin user, default is &#x27;me@example.com&#x27;.</span><br><span class="line">      - SEAFILE_ADMIN_PASSWORD=xxxx # Specifies Seafile admin password, default is &#x27;asecret&#x27;.</span><br><span class="line">      - SEAFILE_SERVER_LETSENCRYPT=false   # Whether use letsencrypt to generate cert.</span><br><span class="line">      - SEAFILE_SERVER_HOSTNAME=file.xxxx.com # Specifies your host name.</span><br><span class="line">    depends_on:</span><br><span class="line">      - db</span><br><span class="line">      - memcached</span><br><span class="line">    networks:</span><br><span class="line">      - seafile-net</span><br><span class="line"></span><br><span class="line">networks:</span><br><span class="line">  seafile-net:</span><br></pre></td></tr></table></figure>
 
-<p>如此一來，就在樹莓派上完成了Docker的安裝。</p>
+<ol start="5">
+<li> 啟動docker-compose <code>docker-compose up -d</code></li>
+</ol>
+<p>如果沒有出現意外的話，這樣便能正常訪問seafile了，在瀏覽器輸入自己的網域，例如： <a class="link"   target="_blank" rel="noopener" href="https://sync.bs10081.com/" >https://sync.bs10081.com<i class="fas fa-external-link-alt"></i></a><br><img src="https://raw.githubusercontent.com/bs10081/image-hosting/master/20210811/Seafile.199zlybixh8g.jpeg" alt="Seafile"></p>
 <h4 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h4><ul>
-<li><a class="link"   target="_blank" rel="noopener" href="https://docker.com/" >Docker<i class="fas fa-external-link-alt"></i></a></li>
-<li><a class="link"   target="_blank" rel="noopener" href="https://draveness.me/docker/" >Docker核心技術與實現原理<i class="fas fa-external-link-alt"></i></a></li>
+<li><a class="link"   target="_blank" rel="noopener" href="https://defloop.com/shu-mei-pai-seaf/" >樹莓派seafile社區版最新docker鏡像<i class="fas fa-external-link-alt"></i></a></li>
+<li><a class="link"   target="_blank" rel="noopener" href="https://github.com/jmu/seafile-docker" >Seafile Server for Raspi Docker image Github repository<i class="fas fa-external-link-alt"></i></a></li>
+<li><a class="link"   target="_blank" rel="noopener" href="https://hub.docker.com/r/jmujmu/seafile-pi" >Seafuke Server for Raspi Docker hub<i class="fas fa-external-link-alt"></i></a></li>
 </ul>
 
         </div>
@@ -255,11 +266,11 @@
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li>本文标题：樹莓派 Docker 安裝</li>
+        <li>本文标题：Raspiberry Pi 搭建 Seafile 同步盤</li>
         <li>本文作者：Reg Chien</li>
-        <li>创建时间：2021-08-11 00:14:34</li>
+        <li>创建时间：2021-08-11 01:00:01</li>
         <li>
-            本文链接：https://blog.bs10081.com/2021/08/11/樹莓派 Docker 安裝/
+            本文链接：https://blog.bs10081.com/2021/08/11/Raspberry Pi 搭建Seafile同步盤/
         </li>
         <li>
             版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -273,29 +284,14 @@
         
             <div class="article-nav">
                 
-                    <div class="article-prev">
-                        <a class="prev"
-                           rel="prev"
-                           href="/2021/08/11/Raspberry%20Pi%20%E6%90%AD%E5%BB%BASeafile%E5%90%8C%E6%AD%A5%E7%9B%A4/"
-                        >
-                            <span class="left arrow-icon flex-center">
-                              <i class="fas fa-chevron-left"></i>
-                            </span>
-                            <span class="title flex-center">
-                                <span class="post-nav-title-item">Raspiberry Pi 搭建 Seafile 同步盤</span>
-                                <span class="post-nav-item">上一篇</span>
-                            </span>
-                        </a>
-                    </div>
-                
                 
                     <div class="article-next">
                         <a class="next"
                            rel="next"
-                           href="/2021/08/09/%E9%96%8B%E6%BA%90%E7%AD%86%E8%A8%98%E8%BB%9F%E9%AB%94%20Joplin/"
+                           href="/2021/08/11/%E6%A8%B9%E8%8E%93%E6%B4%BE%20Docker%20%E5%AE%89%E8%A3%9D/"
                         >
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">開源筆記軟體 Joplin</span>
+                                <span class="post-nav-title-item">樹莓派 Docker 安裝</span>
                                 <span class="post-nav-item">下一篇</span>
                             </span>
                             <span class="right arrow-icon flex-center">
@@ -405,7 +401,7 @@
         <aside class="page-aside">
             <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Docker-%E5%8E%9F%E7%90%86"><span class="nav-text">Docker 原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%99%E7%A8%8B"><span class="nav-text">教程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Docker-%E5%AE%89%E8%A3%9D"><span class="nav-text">Docker 安裝</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8F%83%E8%80%83%E8%B3%87%E6%96%99"><span class="nav-text">參考資料</span></a></li></ol></li></ol></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%97%9C%E6%96%BCSeafile"><span class="nav-text">關於Seafile</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%84%AA%E7%BC%BA%E9%BB%9E%EF%BC%88%E7%A4%BE%E5%8D%80%E7%89%88%EF%BC%89"><span class="nav-text">優缺點（社區版）</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%84%AA%E9%BB%9E"><span class="nav-text">優點</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BC%BA%E9%BB%9E"><span class="nav-text">缺點</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%99%E7%A8%8B%E9%96%8B%E5%A7%8B"><span class="nav-text">教程開始</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%89%E8%A3%9DDocker-amp-docker-compose"><span class="nav-text">安裝Docker &amp; docker-compose</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%83%A8%E7%BD%B2Docker%E9%8F%A1%E5%83%8F"><span class="nav-text">部署Docker鏡像</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8F%83%E8%80%83%E8%B3%87%E6%96%99"><span class="nav-text">參考資料</span></a></li></ol></li></ol></li></ol>
     </div>
 </div>
         </aside>
