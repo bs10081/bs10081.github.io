@@ -229,7 +229,7 @@
     
     
         <span class="article-wordcount article-meta-item">
-            <i class="fas fa-file-word"></i>&nbsp;<span>821 字</span>
+            <i class="fas fa-file-word"></i>&nbsp;<span>826 字</span>
         </span>
     
     
@@ -257,9 +257,9 @@
 <li>可以自架伺服器</li>
 <li>跨平臺（Windows、macOS、Linux、Android、iOS、Chromium、Safari、Firefox）</li>
 </ul>
-<p>上述的功能，完美的取代了我對iCloud 鑰匙圈的依賴，還有一個非常重要的點，那就是通過自行架設伺服器，就能夠擁有Bitwarden的所有功能，無需付費！（真香）<br><img src="https://cdn.jsdelivr.net/gh/bs10081/image-hosting@master/20210811/Bitwarden.df6fuzjrca0.png" alt="Bitwarden"></p>
+<p>上述的功能，完美的取代了我對iCloud 鑰匙圈的依賴，還有一個非常重要的點，那就是通過自行架設伺服器，就能夠擁有Bitwarden的所有功能，無需付費！（真香） <img src="https://cdn.jsdelivr.net/gh/bs10081/image-hosting@master/20210811/Bitwarden.df6fuzjrca0.png" alt="Bitwarden"></p>
 <h2 id="教學"><a href="#教學" class="headerlink" title="教學"></a>教學</h2><h3 id="1-安裝Docker-amp-docker-compose"><a href="#1-安裝Docker-amp-docker-compose" class="headerlink" title="1. 安裝Docker &amp; docker-compose"></a>1. 安裝Docker &amp; docker-compose</h3><p>參考往期<a href="https://blog.bs10081.com/2021/08/11/%E6%A8%B9%E8%8E%93%E6%B4%BE%20Docker%20%E5%AE%89%E8%A3%9D/">Docker教程</a></p>
-<h3 id="2-配置docker-compose-yml"><a href="#2-配置docker-compose-yml" class="headerlink" title="2. 配置docker-compose.yml"></a>2. 配置docker-compose.yml</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">version: &#x27;3&#x27;</span><br><span class="line">services:</span><br><span class="line">  bitwarden: </span><br><span class="line">    image: bitwardenrs/server:1.21.0</span><br><span class="line">    container_name: bitwarden</span><br><span class="line">    restart: always</span><br><span class="line">    volumes:</span><br><span class="line">      - ./data:/data # 資料保存位置，修改./data 成自己自己想要的</span><br><span class="line">    env_file:</span><br><span class="line">      - config.env # 指定 Bitwarden 配置檔名</span><br><span class="line">    ports:</span><br><span class="line">      - &quot;3333:80&quot; # 映射端口3333</span><br></pre></td></tr></table></figure>
+<h3 id="2-配置docker-compose-yml"><a href="#2-配置docker-compose-yml" class="headerlink" title="2. 配置docker-compose.yml"></a>2. 配置docker-compose.yml</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">version: &#x27;3&#x27;</span><br><span class="line">services:</span><br><span class="line">  bitwarden: </span><br><span class="line">    image: bitwardenrs/server:1.21.0</span><br><span class="line">    container_name: bitwarden</span><br><span class="line">    restart: always</span><br><span class="line">    volumes:</span><br><span class="line">      - ./data:/data # 資料保存位置，修改./data 成自己想要存放的地方</span><br><span class="line">    env_file:</span><br><span class="line">      - config.env # 指定 Bitwarden 配置檔名</span><br><span class="line">    ports:</span><br><span class="line">      - &quot;3333:80&quot; # 映射端口3333</span><br></pre></td></tr></table></figure>
 
 <p>可以使用Vim或者nano來編輯</p>
 <h3 id="3-配置-config-env"><a href="#3-配置-config-env" class="headerlink" title="3. 配置 config.env"></a>3. 配置 config.env</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">SIGNUPS_ALLOWED=true</span><br><span class="line">DOMAIN=http(s)://example.com</span><br><span class="line">DATABASE_URL= ~/example/bitwardendb/bitwarden.db</span><br><span class="line">ROCKET_WORKERS=10</span><br><span class="line">WEB_VAULT_ENABLED=true</span><br></pre></td></tr></table></figure>
@@ -269,7 +269,7 @@
 <h3 id="5-Nginx-反向代理"><a href="#5-Nginx-反向代理" class="headerlink" title="5. Nginx 反向代理"></a>5. Nginx 反向代理</h3><p>詳細參考 <a class="link"   target="_blank" rel="noopener" href="https://github.com/dani-garcia/vaultwarden/wiki/Proxy-examples" >Proxy examples<i class="fas fa-external-link-alt"></i></a></p>
 <hr>
 <p>沒有意外的話，就可以通過設定好的網址進行訪問了</p>
-<p>例如：<a class="link"   target="_blank" rel="noopener" href="https://passwd.bs10081.com/" >https://passwd.bs10081.com<i class="fas fa-external-link-alt"></i></a><br><img src="https://cdn.jsdelivr.net/gh/bs10081/image-hosting@master/20210811/Bitwarden.6gx7kzcau2k0.png" alt="Bitwarden"></p>
+<p>例如：<a class="link"   target="_blank" rel="noopener" href="https://passwd.bs10081.com/" >https://passwd.bs10081.com<i class="fas fa-external-link-alt"></i></a> <img src="https://cdn.jsdelivr.net/gh/bs10081/image-hosting@master/20210811/Bitwarden.6gx7kzcau2k0.png" alt="Bitwarden"></p>
 <h2 id="如何使用"><a href="#如何使用" class="headerlink" title="如何使用"></a>如何使用</h2><p>首先要進入到Bitwarden的管理員介面，通過網址後方加上/admin即可。</p>
 <p>例如 <a class="link"   target="_blank" rel="noopener" href="https://passwd.bs10081.com/admin" >https://passwd.bs10081.com/admin<i class="fas fa-external-link-alt"></i></a></p>
 <p>創建帳號並且修改完相關設定以後，就可以安裝客戶端了。</p>
@@ -277,16 +277,17 @@
 <li><a class="link"   target="_blank" rel="noopener" href="https://chrome.google.com/webstore/detail/bitwarden-free-password-m/nngceckbapebfimnlniiiahkandclblb" >Chrome<i class="fas fa-external-link-alt"></i></a></li>
 <li><a class="link"   target="_blank" rel="noopener" href="https://addons.mozilla.org/zh-TW/firefox/addon/bitwarden-password-manager/" >Firefox<i class="fas fa-external-link-alt"></i></a></li>
 <li><a class="link"   target="_blank" rel="noopener" href="https://apps.apple.com/us/app/bitwarden/id1352778147?mt=12" >Safari<i class="fas fa-external-link-alt"></i></a><ol>
-<li>開啟Bitwarden桌面app至少一次</li>
-<li>Safari 設定中啟用Bitwarden插件</li>
+<li> 開啟Bitwarden桌面app至少一次</li>
+<li> Safari 設定中啟用Bitwarden插件</li>
 </ol>
 </li>
 <li><a class="link"   target="_blank" rel="noopener" href="https://apps.apple.com/us/app/bitwarden-password-manager/id1137397744" >iOS<i class="fas fa-external-link-alt"></i></a></li>
-<li><a class="link"   target="_blank" rel="noopener" href="https://play.google.com/store/apps/details?id=com.x8bit.bitwarden&hl=zh_TW&gl=US" >Android<i class="fas fa-external-link-alt"></i></a><h3 id="設定Bitwarden連接伺服器"><a href="#設定Bitwarden連接伺服器" class="headerlink" title="設定Bitwarden連接伺服器"></a>設定Bitwarden連接伺服器</h3><img src="https://cdn.jsdelivr.net/gh/bs10081/image-hosting@master/20210811/Bitwarden.1oeea1opwdgg.png" alt="Bitwarden"><br>點擊右上角的齒輪<br><img src="https://cdn.jsdelivr.net/gh/bs10081/image-hosting@master/20210811/Bitwarden.46xy5y8aj5m0.png" alt="Bitwarden"><br>輸入樹莓派的IP位置（圖中為範例），然後保存。<br><img src="https://cdn.jsdelivr.net/gh/bs10081/image-hosting@master/20210811/Bitwarden.3b7yoprxobs0.png" alt="Bitwarden"></li>
+<li><a class="link"   target="_blank" rel="noopener" href="https://play.google.com/store/apps/details?id=com.x8bit.bitwarden&hl=zh_TW&gl=US" >Android<i class="fas fa-external-link-alt"></i></a></li>
 </ul>
+<h3 id="設定Bitwarden連接伺服器"><a href="#設定Bitwarden連接伺服器" class="headerlink" title="設定Bitwarden連接伺服器"></a>設定Bitwarden連接伺服器</h3><p><img src="https://cdn.jsdelivr.net/gh/bs10081/image-hosting@master/20210811/Bitwarden.1oeea1opwdgg.png" alt="Bitwarden"> 點擊右上角的齒輪 <img src="https://cdn.jsdelivr.net/gh/bs10081/image-hosting@master/20210811/Bitwarden.46xy5y8aj5m0.png" alt="Bitwarden"> 輸入樹莓派的IP位置（圖中為範例），然後保存。 <img src="https://cdn.jsdelivr.net/gh/bs10081/image-hosting@master/20210811/Bitwarden.3b7yoprxobs0.png" alt="Bitwarden"></p>
 <p><strong>這樣就完成了Bitwarden的密碼託管部署啦！</strong></p>
-<h2 id="值得拿出來單獨講的功能"><a href="#值得拿出來單獨講的功能" class="headerlink" title="值得拿出來單獨講的功能"></a>值得拿出來單獨講的功能</h2><h3 id="1-密碼報告功能"><a href="#1-密碼報告功能" class="headerlink" title="1. 密碼報告功能"></a>1. 密碼報告功能</h3><p><img src="https://cdn.jsdelivr.net/gh/bs10081/image-hosting@master/20210811/Bitwarden.1wdf3atg40ps.png" alt="Bitwarden"><br>菜市場等級的密碼</p>
-<h3 id="2-Send"><a href="#2-Send" class="headerlink" title="2. Send"></a>2. Send</h3><p><img src="https://cdn.jsdelivr.net/gh/bs10081/image-hosting@master/20210811/Bitwarden.1nxr82elr080.png" alt="Bitwarden"><br>可以通過Bitwarden來發送敏感數據，並且設定刪除日期、過期時間、存儲次數等等。</p>
+<h2 id="值得拿出來單獨講的功能"><a href="#值得拿出來單獨講的功能" class="headerlink" title="值得拿出來單獨講的功能"></a>值得拿出來單獨講的功能</h2><h3 id="1-密碼報告功能"><a href="#1-密碼報告功能" class="headerlink" title="1. 密碼報告功能"></a>1. 密碼報告功能</h3><p><img src="https://cdn.jsdelivr.net/gh/bs10081/image-hosting@master/20210811/Bitwarden.1wdf3atg40ps.png" alt="Bitwarden"> 菜市場等級的密碼</p>
+<h3 id="2-Send"><a href="#2-Send" class="headerlink" title="2. Send"></a>2. Send</h3><p><img src="https://cdn.jsdelivr.net/gh/bs10081/image-hosting@master/20210811/Bitwarden.1nxr82elr080.png" alt="Bitwarden"> 可以通過Bitwarden來發送敏感數據，並且設定刪除日期、過期時間、存儲次數等等。</p>
 <p>實際運用上則可以作為發送激活碼或者隱私檔案使用。</p>
 <p>Send資料存儲在伺服器上，並且與密碼使用同樣的加密規格（PBKDF2 SHA-256，迭代加密50000次以上，可自行設定加密規格），並且傳送過程中採取端對端加密。</p>
 <h4 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h4><ul>
