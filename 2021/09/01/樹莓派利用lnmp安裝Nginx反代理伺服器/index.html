@@ -9,7 +9,7 @@
     
     <title>
         
-            樹莓派搭建Bitwarden密碼託管服務 |
+            樹莓派利用Inmp安裝Nginx反代理伺服器 |
         
         CxBlog
     </title>
@@ -181,7 +181,7 @@
     <div class="article-content-container">
 
         <div class="article-title">
-            <span class="title-hover-animation">樹莓派搭建Bitwarden密碼託管服務</span>
+            <span class="title-hover-animation">樹莓派利用Inmp安裝Nginx反代理伺服器</span>
         </div>
 
         
@@ -199,7 +199,7 @@
                     <div class="meta-info">
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
-        <i class="fas fa-edit"></i>&nbsp;2021-08-11 11:15:50
+        <i class="fas fa-edit"></i>&nbsp;2021-09-01 23:19:31
     </span>
     
         <span class="article-categories article-meta-item">
@@ -219,7 +219,7 @@
             <ul>
                 
                     <li>
-                        <a href="/tags/Security/">Security</a>&nbsp;
+                        <a href="/tags/Nginx/">Nginx</a>&nbsp;
                     </li>
                 
             </ul>
@@ -229,12 +229,12 @@
     
     
         <span class="article-wordcount article-meta-item">
-            <i class="fas fa-file-word"></i>&nbsp;<span>826 字</span>
+            <i class="fas fa-file-word"></i>&nbsp;<span>587 字</span>
         </span>
     
     
         <span class="article-min2read article-meta-item">
-            <i class="fas fa-clock"></i>&nbsp;<span>3 分钟</span>
+            <i class="fas fa-clock"></i>&nbsp;<span>2 分钟</span>
         </span>
     
     
@@ -246,56 +246,51 @@
         
 
         <div class="article-content markdown-body">
-            <p>Bitwarden，是一個開源的密碼託管服務，原先的我都使用iCloud鑰匙圈，好處是在蘋果生態裡面非常好用，但是一旦使用了Chrome、Windows、Linux以後，這個優勢就蕩然無存，還是需要自己用腦子來記住眾多的密碼，可這樣往往就會導致密碼過於簡單，很容易就變成火燒連環船，一個網站洩露了密碼，就會導致所有的平臺帳號被破解，十分的危險。</p>
-<p>可能有人會有疑問，那我直接在所有裝置上都使用Chrome就好了，通過Chrome來統一管理密碼就好了，雖然這樣也能夠實現跨平臺，但是沒辦法在iOS設備上直接通過生物識別來登錄App，只能侷限在瀏覽器內，所以後來的我就在諸多的第三方密碼託管服務裡面看中了bitwarden。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/bs10081/image-hosting@master/20210811/Bitwarden.726kkgdinpc0.png" alt="Bitwarden"></p>
-<p>市面上有那麼多密碼託管服務，為什麼偏偏選擇Bitwarden呢？原因如下：</p>
+            <p><a class="link"   target="_blank" rel="noopener" href="https://lnmp.org/" >LNMP<i class="fas fa-external-link-alt"></i></a>安裝包，一個利用Linux Shell編寫的環境安裝腳本，可以在RHEL、Debian等衍生發行版本中快速安裝PHP、MySQL、Nginx，能夠避免自己手動安裝的煩惱，加上安裝採用編譯的方式，這樣能更好的利用樹莓派的性能。</p>
+<h2 id="安裝"><a href="#安裝" class="headerlink" title="安裝"></a>安裝</h2><h3 id="下載LNMP"><a href="#下載LNMP" class="headerlink" title="下載LNMP"></a>下載LNMP</h3><blockquote>
+<p>LNMP 1.8</p>
+<p>下载版：(不含源码安装包文件，仅有安装脚本及配置文件)<br><a class="link"   target="_blank" rel="noopener" href="http://soft.vpser.net/lnmp/lnmp1.8.tar.gz" >http://soft.vpser.net/lnmp/lnmp1.8.tar.gz<i class="fas fa-external-link-alt"></i></a><br>文件大小：170KB MD5：06e205b6764d98091fe0f52f56a354ae</p>
+<p>完整版：<br><a class="link"   target="_blank" rel="noopener" href="http://soft.vpser.net/lnmp/lnmp1.8-full.tar.gz" >http://soft.vpser.net/lnmp/lnmp1.8-full.tar.gz<i class="fas fa-external-link-alt"></i></a><br>文件大小：910MB MD5：a0fd27d87027580a2cf4cbb6fbfb01bc</p>
+</blockquote>
+<p>樹莓派網路良好的情況下，我們選擇使用下載版⏬</p>
+<p>按照慣例，先創建一個資料夾，避免檔案充滿了home目錄。</p>
+<p><code>mkdir lnmp_1.8</code></p>
+<p>然後通過wget 來下載檔案。</p>
+<blockquote>
+<p>如果沒有安裝wget，可以通過 <code>sudo apt install wget</code> 來安裝。</p>
+</blockquote>
+<p><code>cd lnmp_1.8</code></p>
+<p>移動到lnmp_1.8的資料夾。</p>
+<p><code>wget http://soft.vpser.net/lnmp/lnmp1.8.tar.gz -cO lnmp1.8.tar.gz &amp;&amp; tar zxf lnmp1.8.tar.gz &amp;&amp; cd lnmp1.8 &amp;&amp; ./install.sh lnmp </code></p>
+<p>然後通過官方提供的無人值守腳本，進行一鍵安裝。</p>
+<p><img src="https://lnmp.org/images/1.5/lnmp1.5-install-1.png"></p>
+<blockquote>
+<p>圖片來源：lnmp.org</p>
+</blockquote>
+<p>如上圖所示，就可以選擇自己想使用的DataBase了，或者是不安裝，不過這裡需要注意的是，MySQL 5.6、5.7或者是MariaDB 10 以上的版本，就需要1GB以上的RAM才能夠正常使用了。當然，如果只想安裝Database的話，可以將一鍵安裝指令最後面的<code>./install.sh lnmp</code> 替換成 <code>./install.sh db</code>。</p>
+<h3 id="Nginx設定"><a href="#Nginx設定" class="headerlink" title="Nginx設定"></a>Nginx設定</h3><h4 id="Nginx-資料夾用途"><a href="#Nginx-資料夾用途" class="headerlink" title="Nginx 資料夾用途"></a>Nginx 資料夾用途</h4><ul>
+<li>/usr/local/nginx/conf/vhost </li>
+</ul>
+<p>存放需要反向代理的網頁的配置文件，根據不同服務定製所需，這裡提供一個範本。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">    listen 443 ssl;</span><br><span class="line">    server_name Example.bs10081.com;</span><br><span class="line"></span><br><span class="line">    ssl on;</span><br><span class="line">    ssl_certificate /usr/local/nginx/conf/ssl/ssl.pem; #ssl憑證</span><br><span class="line">    ssl_certificate_key /usr/local/nginx/conf/ssl/ssl.key; #ssl密鑰</span><br><span class="line"></span><br><span class="line">    ssl_session_timeout 5m;</span><br><span class="line">    ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:ECDHE:ECDH:AES:HIGH:!NULL:!aNULL:!MD5:!ADH:!RC4;</span><br><span class="line">    ssl_protocols TLSv1 TLSv1.1 TLSv1.2 ;</span><br><span class="line">    ssl_prefer_server_ciphers on;</span><br><span class="line">    location / &#123;</span><br><span class="line">              proxy_pass http://127.0.0.1:80/;</span><br><span class="line">              proxy_redirect off;</span><br><span class="line">              proxy_set_header Host $host;</span><br><span class="line">              proxy_set_header X-Real-IP $remote_addr;</span><br><span class="line">              proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;</span><br><span class="line"></span><br><span class="line">          &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
 <ul>
-<li>傳輸過程使用端對端加密</li>
-<li>源代碼開源</li>
-<li>支持多國語言</li>
-<li>可以自架伺服器</li>
-<li>跨平臺（Windows、macOS、Linux、Android、iOS、Chromium、Safari、Firefox）</li>
+<li>/usr/local/nginx/conf/ssl</li>
 </ul>
-<p>上述的功能，完美的取代了我對iCloud 鑰匙圈的依賴，還有一個非常重要的點，那就是通過自行架設伺服器，就能夠擁有Bitwarden的所有功能，無需付費！（真香） <img src="https://cdn.jsdelivr.net/gh/bs10081/image-hosting@master/20210811/Bitwarden.df6fuzjrca0.png" alt="Bitwarden"></p>
-<h2 id="教學"><a href="#教學" class="headerlink" title="教學"></a>教學</h2><h3 id="1-安裝Docker-amp-docker-compose"><a href="#1-安裝Docker-amp-docker-compose" class="headerlink" title="1. 安裝Docker &amp; docker-compose"></a>1. 安裝Docker &amp; docker-compose</h3><p>參考往期<a href="https://blog.bs10081.com/2021/08/11/%E6%A8%B9%E8%8E%93%E6%B4%BE%20Docker%20%E5%AE%89%E8%A3%9D/">Docker教程</a></p>
-<h3 id="2-配置docker-compose-yml"><a href="#2-配置docker-compose-yml" class="headerlink" title="2. 配置docker-compose.yml"></a>2. 配置docker-compose.yml</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">version: &#x27;3&#x27;</span><br><span class="line">services:</span><br><span class="line">  bitwarden: </span><br><span class="line">    image: bitwardenrs/server:1.21.0</span><br><span class="line">    container_name: bitwarden</span><br><span class="line">    restart: always</span><br><span class="line">    volumes:</span><br><span class="line">      - ./data:/data # 資料保存位置，修改./data 成自己想要存放的地方</span><br><span class="line">    env_file:</span><br><span class="line">      - config.env # 指定 Bitwarden 配置檔名</span><br><span class="line">    ports:</span><br><span class="line">      - &quot;3333:80&quot; # 映射端口3333</span><br></pre></td></tr></table></figure>
-
-<p>可以使用Vim或者nano來編輯</p>
-<h3 id="3-配置-config-env"><a href="#3-配置-config-env" class="headerlink" title="3. 配置 config.env"></a>3. 配置 config.env</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">SIGNUPS_ALLOWED=true</span><br><span class="line">DOMAIN=http(s)://example.com</span><br><span class="line">DATABASE_URL= ~/example/bitwardendb/bitwarden.db</span><br><span class="line">ROCKET_WORKERS=10</span><br><span class="line">WEB_VAULT_ENABLED=true</span><br></pre></td></tr></table></figure>
-
-<p>修改上述的兩個example。</p>
-<h3 id="4-啟動docker-compuse"><a href="#4-啟動docker-compuse" class="headerlink" title="4. 啟動docker-compuse"></a>4. 啟動docker-compuse</h3><p><code>docker up -d</code></p>
-<h3 id="5-Nginx-反向代理"><a href="#5-Nginx-反向代理" class="headerlink" title="5. Nginx 反向代理"></a>5. Nginx 反向代理</h3><p>詳細參考 <a class="link"   target="_blank" rel="noopener" href="https://github.com/dani-garcia/vaultwarden/wiki/Proxy-examples" >Proxy examples<i class="fas fa-external-link-alt"></i></a></p>
+<p>存放SSL證書的地方。</p>
+<blockquote>
+<p>個人習慣放在這裡，需要自己創建一個ssl的資料夾。</p>
+</blockquote>
+<h4 id="重新加載Nginx配置"><a href="#重新加載Nginx配置" class="headerlink" title="重新加載Nginx配置"></a>重新加載Nginx配置</h4><p><code>sudo lnmp reload nginx</code></p>
+<blockquote>
+<p>重新載入</p>
+</blockquote>
+<p><code>sudo lnmp restart nginx</code></p>
+<blockquote>
+<p>重新啟動</p>
+</blockquote>
 <hr>
-<p>沒有意外的話，就可以通過設定好的網址進行訪問了</p>
-<p>例如：<a class="link"   target="_blank" rel="noopener" href="https://passwd.bs10081.com/" >https://passwd.bs10081.com<i class="fas fa-external-link-alt"></i></a> <img src="https://cdn.jsdelivr.net/gh/bs10081/image-hosting@master/20210811/Bitwarden.6gx7kzcau2k0.png" alt="Bitwarden"></p>
-<h2 id="如何使用"><a href="#如何使用" class="headerlink" title="如何使用"></a>如何使用</h2><p>首先要進入到Bitwarden的管理員介面，通過網址後方加上/admin即可。</p>
-<p>例如 <a class="link"   target="_blank" rel="noopener" href="https://passwd.bs10081.com/admin" >https://passwd.bs10081.com/admin<i class="fas fa-external-link-alt"></i></a></p>
-<p>創建帳號並且修改完相關設定以後，就可以安裝客戶端了。</p>
-<h3 id="安裝Bitwarden客戶端"><a href="#安裝Bitwarden客戶端" class="headerlink" title="安裝Bitwarden客戶端"></a>安裝Bitwarden客戶端</h3><ul>
-<li><a class="link"   target="_blank" rel="noopener" href="https://chrome.google.com/webstore/detail/bitwarden-free-password-m/nngceckbapebfimnlniiiahkandclblb" >Chrome<i class="fas fa-external-link-alt"></i></a></li>
-<li><a class="link"   target="_blank" rel="noopener" href="https://addons.mozilla.org/zh-TW/firefox/addon/bitwarden-password-manager/" >Firefox<i class="fas fa-external-link-alt"></i></a></li>
-<li><a class="link"   target="_blank" rel="noopener" href="https://apps.apple.com/us/app/bitwarden/id1352778147?mt=12" >Safari<i class="fas fa-external-link-alt"></i></a><ol>
-<li> 開啟Bitwarden桌面app至少一次</li>
-<li> Safari 設定中啟用Bitwarden插件</li>
-</ol>
-</li>
-<li><a class="link"   target="_blank" rel="noopener" href="https://apps.apple.com/us/app/bitwarden-password-manager/id1137397744" >iOS<i class="fas fa-external-link-alt"></i></a></li>
-<li><a class="link"   target="_blank" rel="noopener" href="https://play.google.com/store/apps/details?id=com.x8bit.bitwarden&hl=zh_TW&gl=US" >Android<i class="fas fa-external-link-alt"></i></a></li>
-</ul>
-<h3 id="設定Bitwarden連接伺服器"><a href="#設定Bitwarden連接伺服器" class="headerlink" title="設定Bitwarden連接伺服器"></a>設定Bitwarden連接伺服器</h3><p><img src="https://cdn.jsdelivr.net/gh/bs10081/image-hosting@master/20210811/Bitwarden.1oeea1opwdgg.png" alt="Bitwarden"> 點擊右上角的齒輪 <img src="https://cdn.jsdelivr.net/gh/bs10081/image-hosting@master/20210811/Bitwarden.46xy5y8aj5m0.png" alt="Bitwarden"> 輸入樹莓派的IP位置（圖中為範例），然後保存。 <img src="https://cdn.jsdelivr.net/gh/bs10081/image-hosting@master/20210811/Bitwarden.3b7yoprxobs0.png" alt="Bitwarden"></p>
-<p><strong>這樣就完成了Bitwarden的密碼託管部署啦！</strong></p>
-<h2 id="值得拿出來單獨講的功能"><a href="#值得拿出來單獨講的功能" class="headerlink" title="值得拿出來單獨講的功能"></a>值得拿出來單獨講的功能</h2><h3 id="1-密碼報告功能"><a href="#1-密碼報告功能" class="headerlink" title="1. 密碼報告功能"></a>1. 密碼報告功能</h3><p><img src="https://cdn.jsdelivr.net/gh/bs10081/image-hosting@master/20210811/Bitwarden.1wdf3atg40ps.png" alt="Bitwarden"> 菜市場等級的密碼</p>
-<h3 id="2-Send"><a href="#2-Send" class="headerlink" title="2. Send"></a>2. Send</h3><p><img src="https://cdn.jsdelivr.net/gh/bs10081/image-hosting@master/20210811/Bitwarden.1nxr82elr080.png" alt="Bitwarden"> 可以通過Bitwarden來發送敏感數據，並且設定刪除日期、過期時間、存儲次數等等。</p>
-<p>實際運用上則可以作為發送激活碼或者隱私檔案使用。</p>
-<p>Send資料存儲在伺服器上，並且與密碼使用同樣的加密規格（PBKDF2 SHA-256，迭代加密50000次以上，可自行設定加密規格），並且傳送過程中採取端對端加密。</p>
-<h4 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h4><ul>
-<li><a class="link"   target="_blank" rel="noopener" href="https://bitwarden.com/help/" >Bitwarden Help<i class="fas fa-external-link-alt"></i></a></li>
-<li><a class="link"   target="_blank" rel="noopener" href="https://www.bboy.app/2020/04/17/%E5%9C%A8%E6%A0%91%E8%8E%93%E6%B4%BE%E4%B8%AD%E6%90%AD%E5%BB%BAbitwarden%E5%B9%B6%E6%8A%8A1password%E6%95%B0%E6%8D%AE%E8%BF%81%E5%85%A5/" >在树莓派中搭建bitwarden並把1password数据迁入<i class="fas fa-external-link-alt"></i></a></li>
-<li><a class="link"   target="_blank" rel="noopener" href="https://www.psay.cn/toss/136.html" >自建bitwarden密码服务<i class="fas fa-external-link-alt"></i></a></li>
-<li><a class="link"   target="_blank" rel="noopener" href="https://bitwarden.com/help/article/about-send/" >Bitwarden Send Help<i class="fas fa-external-link-alt"></i></a></li>
-</ul>
+<p>以上如此，便完成了最基本的Nginx使用啦。</p>
 
         </div>
 
@@ -303,11 +298,11 @@
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li>本文标题：樹莓派搭建Bitwarden密碼託管服務</li>
+        <li>本文标题：樹莓派利用Inmp安裝Nginx反代理伺服器</li>
         <li>本文作者：Reg Chien</li>
-        <li>创建时间：2021-08-11 11:15:50</li>
+        <li>创建时间：2021-09-01 23:19:31</li>
         <li>
-            本文链接：https://blog.bs10081.com/2021/08/11/樹莓派搭建Bitwarden密碼託管服務/
+            本文链接：https://blog.bs10081.com/2021/09/01/樹莓派利用lnmp安裝Nginx反代理伺服器/
         </li>
         <li>
             版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -321,29 +316,14 @@
         
             <div class="article-nav">
                 
-                    <div class="article-prev">
-                        <a class="prev"
-                           rel="prev"
-                           href="/2021/09/01/%E6%A8%B9%E8%8E%93%E6%B4%BE%E5%88%A9%E7%94%A8lnmp%E5%AE%89%E8%A3%9DNginx%E5%8F%8D%E4%BB%A3%E7%90%86%E4%BC%BA%E6%9C%8D%E5%99%A8/"
-                        >
-                            <span class="left arrow-icon flex-center">
-                              <i class="fas fa-chevron-left"></i>
-                            </span>
-                            <span class="title flex-center">
-                                <span class="post-nav-title-item">樹莓派利用Inmp安裝Nginx反代理伺服器</span>
-                                <span class="post-nav-item">上一篇</span>
-                            </span>
-                        </a>
-                    </div>
-                
                 
                     <div class="article-next">
                         <a class="next"
                            rel="next"
-                           href="/2021/08/11/%E6%A8%B9%E8%8E%93%E6%B4%BE%E6%90%AD%E5%BB%BASeafile%E5%90%8C%E6%AD%A5%E7%9B%A4/"
+                           href="/2021/08/11/%E6%A8%B9%E8%8E%93%E6%B4%BE%E6%90%AD%E5%BB%BABitwarden%E5%AF%86%E7%A2%BC%E8%A8%97%E7%AE%A1%E6%9C%8D%E5%8B%99/"
                         >
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">樹莓派搭建 Seafile 同步盤</span>
+                                <span class="post-nav-title-item">樹莓派搭建Bitwarden密碼託管服務</span>
                                 <span class="post-nav-item">下一篇</span>
                             </span>
                             <span class="right arrow-icon flex-center">
@@ -453,7 +433,7 @@
         <aside class="page-aside">
             <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%99%E5%AD%B8"><span class="nav-text">教學</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E5%AE%89%E8%A3%9DDocker-amp-docker-compose"><span class="nav-text">1. 安裝Docker &amp; docker-compose</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E9%85%8D%E7%BD%AEdocker-compose-yml"><span class="nav-text">2. 配置docker-compose.yml</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E9%85%8D%E7%BD%AE-config-env"><span class="nav-text">3. 配置 config.env</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-%E5%95%9F%E5%8B%95docker-compuse"><span class="nav-text">4. 啟動docker-compuse</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-Nginx-%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86"><span class="nav-text">5. Nginx 反向代理</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8"><span class="nav-text">如何使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%9DBitwarden%E5%AE%A2%E6%88%B6%E7%AB%AF"><span class="nav-text">安裝Bitwarden客戶端</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A8%AD%E5%AE%9ABitwarden%E9%80%A3%E6%8E%A5%E4%BC%BA%E6%9C%8D%E5%99%A8"><span class="nav-text">設定Bitwarden連接伺服器</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%80%BC%E5%BE%97%E6%8B%BF%E5%87%BA%E4%BE%86%E5%96%AE%E7%8D%A8%E8%AC%9B%E7%9A%84%E5%8A%9F%E8%83%BD"><span class="nav-text">值得拿出來單獨講的功能</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E5%AF%86%E7%A2%BC%E5%A0%B1%E5%91%8A%E5%8A%9F%E8%83%BD"><span class="nav-text">1. 密碼報告功能</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-Send"><span class="nav-text">2. Send</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8F%83%E8%80%83%E8%B3%87%E6%96%99"><span class="nav-text">參考資料</span></a></li></ol></li></ol></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%9D"><span class="nav-text">安裝</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%8B%E8%BC%89LNMP"><span class="nav-text">下載LNMP</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Nginx%E8%A8%AD%E5%AE%9A"><span class="nav-text">Nginx設定</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Nginx-%E8%B3%87%E6%96%99%E5%A4%BE%E7%94%A8%E9%80%94"><span class="nav-text">Nginx 資料夾用途</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%87%8D%E6%96%B0%E5%8A%A0%E8%BC%89Nginx%E9%85%8D%E7%BD%AE"><span class="nav-text">重新加載Nginx配置</span></a></li></ol></li></ol></li></ol>
     </div>
 </div>
         </aside>
