@@ -9,7 +9,7 @@
     
     <title>
         
-            樹莓派利用Inmp安裝Nginx反代理伺服器 |
+            樹莓派用Docker搭建 Joplin Server |
         
         CxBlog
     </title>
@@ -181,7 +181,7 @@
     <div class="article-content-container">
 
         <div class="article-title">
-            <span class="title-hover-animation">樹莓派利用Inmp安裝Nginx反代理伺服器</span>
+            <span class="title-hover-animation">樹莓派用Docker搭建 Joplin Server</span>
         </div>
 
         
@@ -199,7 +199,7 @@
                     <div class="meta-info">
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
-        <i class="fas fa-edit"></i>&nbsp;2021-09-01 23:19:31
+        <i class="fas fa-edit"></i>&nbsp;2021-09-01 23:32:46
     </span>
     
         <span class="article-categories article-meta-item">
@@ -219,7 +219,7 @@
             <ul>
                 
                     <li>
-                        <a href="/tags/LNMP/">LNMP</a>&nbsp;
+                        <a href="/tags/Docker/">Docker</a>&nbsp;
                     </li>
                 
             </ul>
@@ -229,12 +229,12 @@
     
     
         <span class="article-wordcount article-meta-item">
-            <i class="fas fa-file-word"></i>&nbsp;<span>594 字</span>
+            <i class="fas fa-file-word"></i>&nbsp;<span>910 字</span>
         </span>
     
     
         <span class="article-min2read article-meta-item">
-            <i class="fas fa-clock"></i>&nbsp;<span>2 分钟</span>
+            <i class="fas fa-clock"></i>&nbsp;<span>3 分钟</span>
         </span>
     
     
@@ -246,49 +246,38 @@
         
 
         <div class="article-content markdown-body">
-            <p><a class="link"   target="_blank" rel="noopener" href="https://lnmp.org/" >LNMP<i class="fas fa-external-link-alt"></i></a>安裝包，一個利用Linux Shell編寫的環境安裝腳本，可以在RHEL、Debian等衍生發行版本中快速安裝PHP、MySQL、Nginx，能夠避免自己手動安裝的煩惱，加上安裝採用編譯的方式，這樣能更好的利用樹莓派的性能。</p>
-<h2 id="安裝"><a href="#安裝" class="headerlink" title="安裝"></a>安裝</h2><h3 id="下載LNMP"><a href="#下載LNMP" class="headerlink" title="下載LNMP"></a>下載LNMP</h3><blockquote>
-<p>LNMP 1.8</p>
-<p>下载版：(不含源码安装包文件，仅有安装脚本及配置文件) <a class="link"   target="_blank" rel="noopener" href="http://soft.vpser.net/lnmp/lnmp1.8.tar.gz" >http://soft.vpser.net/lnmp/lnmp1.8.tar.gz<i class="fas fa-external-link-alt"></i></a> 文件大小：170KB MD5：06e205b6764d98091fe0f52f56a354ae</p>
-<p>完整版： <a class="link"   target="_blank" rel="noopener" href="http://soft.vpser.net/lnmp/lnmp1.8-full.tar.gz" >http://soft.vpser.net/lnmp/lnmp1.8-full.tar.gz<i class="fas fa-external-link-alt"></i></a> 文件大小：910MB MD5：a0fd27d87027580a2cf4cbb6fbfb01bc</p>
-</blockquote>
-<p>樹莓派網路良好的情況下，我們選擇使用下載版⏬</p>
-<p>按照慣例，先創建一個資料夾，避免檔案充滿了home目錄。</p>
-<p><code>mkdir lnmp_1.8</code></p>
-<p>然後通過wget 來下載檔案。</p>
-<blockquote>
-<p>如果沒有安裝wget，可以通過 <code>sudo apt install wget</code> 來安裝。</p>
-</blockquote>
-<p><code>cd lnmp_1.8</code></p>
-<p>移動到lnmp_1.8的資料夾。</p>
-<p><code>wget http://soft.vpser.net/lnmp/lnmp1.8.tar.gz -cO lnmp1.8.tar.gz &amp;&amp; tar zxf lnmp1.8.tar.gz &amp;&amp; cd lnmp1.8 &amp;&amp; ./install.sh lnmp</code></p>
-<p>然後通過官方提供的無人值守腳本，進行一鍵安裝。</p>
-<p><img src="https://lnmp.org/images/1.5/lnmp1.5-install-1.png"></p>
-<blockquote>
-<p>圖片來源：lnmp.org</p>
-</blockquote>
-<p>如上圖所示，就可以選擇自己想使用的DataBase了，或者是不安裝，不過這裡需要注意的是，MySQL 5.6、5.7或者是MariaDB 10 以上的版本，就需要1GB以上的RAM才能夠正常使用了。當然，如果只想安裝Database的話，可以將一鍵安裝指令最後面的<code>./install.sh lnmp</code> 替換成 <code>./install.sh db</code>。</p>
-<h3 id="Nginx設定"><a href="#Nginx設定" class="headerlink" title="Nginx設定"></a>Nginx設定</h3><h4 id="Nginx-資料夾用途"><a href="#Nginx-資料夾用途" class="headerlink" title="Nginx 資料夾用途"></a>Nginx 資料夾用途</h4><ul>
-<li>/usr/local/nginx/conf/vhost</li>
-</ul>
-<p>存放需要反向代理的網頁的配置文件，根據不同服務定製所需，這裡提供一個範本。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">    listen 443 ssl;</span><br><span class="line">    server_name Example.bs10081.com;</span><br><span class="line"></span><br><span class="line">    ssl on;</span><br><span class="line">    ssl_certificate /usr/local/nginx/conf/ssl/ssl.pem; #ssl憑證</span><br><span class="line">    ssl_certificate_key /usr/local/nginx/conf/ssl/ssl.key; #ssl密鑰</span><br><span class="line"></span><br><span class="line">    ssl_session_timeout 5m;</span><br><span class="line">    ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:ECDHE:ECDH:AES:HIGH:!NULL:!aNULL:!MD5:!ADH:!RC4;</span><br><span class="line">    ssl_protocols TLSv1 TLSv1.1 TLSv1.2 ;</span><br><span class="line">    ssl_prefer_server_ciphers on;</span><br><span class="line">    location / &#123;</span><br><span class="line">              proxy_pass http://127.0.0.1:80/;</span><br><span class="line">              proxy_redirect off;</span><br><span class="line">              proxy_set_header Host $host;</span><br><span class="line">              proxy_set_header X-Real-IP $remote_addr;</span><br><span class="line">              proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;</span><br><span class="line"></span><br><span class="line">          &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+            <p>不久前有介紹過 Joplin這款開源的筆記軟體 <em><a href="https://blog.bs10081.com/2021/08/09/%E9%96%8B%E6%BA%90%E7%AD%86%E8%A8%98%E8%BB%9F%E9%AB%94%20Joplin/">傳送門</a></em> ，我們除了可以使用WebDav和NextCloud之外，最近Joplin推出了Joplin Server，讓我們可以自己架設伺服器，作為筆記同步的方案。</p>
+<p>在開始教學前，我說說之前使用NextCloud同步筆記的體驗，同樣的環境（樹莓派4B 4GB），在沒有使用加密之前，同步速度還能接受，能夠正常的使用，但是隨著加密選項的開啟，就開始出現Bug，會出現報錯，雖然不影響使用，但是看起來非常的難受，加上同步在NextCloud的檔案，會沒辦法從NextCloud內部刪除，只能通過root權限來進行刪除，非常的麻煩，一度讓我放棄了使用Joplin的想法。</p>
+<p>這幾天使用Joplin Server來同步筆記，明顯感受同步速度提升不少，就算開啟了加密，也沒有報錯產生了，這很nice。</p>
+<p>廢話不多說，直接上教程！</p>
+<h2 id="教程"><a href="#教程" class="headerlink" title="教程"></a>教程</h2><h3 id="前置需求"><a href="#前置需求" class="headerlink" title="前置需求"></a>前置需求</h3><ol>
+<li> <strong>Public IP</strong> 需要一個公網IP，讓Joplin能夠連到Server，如果沒有固定IP的話，可以詢問寬帶供應商，一般來說都能免費拿到一個固定IP。 實在沒辦法取得固定IP的話，可以通過Dynamic DNS來解決，比如說<a class="link"   target="_blank" rel="noopener" href="https://www.noip.com/" >No-IP<i class="fas fa-external-link-alt"></i></a>，在我還是萌新的時候（現在還是Noob，但是不萌了），我就是用的No-IP，還不錯，可以試試。</li>
+<li> <strong>Port forwarding</strong> Joplin Server在發送資料的時候，會通過80端口和443端口，所以我們要在路由器上開放這兩個端口，才能讓Joplin Server正常的工作。</li>
+<li> <strong>Raspberry Pi OS 64bit</strong> 默認的樹莓派官方系統使用的是32位元的系統，但是對於架設服務來說，我們迫切需要一個64位元的系統，自從樹莓派3開始，便使用64位元的SoC，所以在安裝樹莓派系統的時候，就需要特別去挑選64位元的版本，可以從<a class="link"   target="_blank" rel="noopener" href="https://downloads.raspberrypi.org/raspios_lite_arm64/images/" >這裡<i class="fas fa-external-link-alt"></i></a>下載到樹莓派64bit的系統，選擇版本最新的哪個既可。</li>
+</ol>
+<h3 id="正式開始"><a href="#正式開始" class="headerlink" title="正式開始"></a>正式開始</h3><h4 id="1-docker-安裝及-docker-compose"><a href="#1-docker-安裝及-docker-compose" class="headerlink" title="1. docker 安裝及 docker-compose"></a>1. docker 安裝及 docker-compose</h4><p>參考往期<a href="https://blog.bs10081.com/2021/08/11/%E6%A8%B9%E8%8E%93%E6%B4%BE%20Docker%20%E5%AE%89%E8%A3%9D/">Docker教程</a></p>
+<h4 id="2-Nginx-Web-Server"><a href="#2-Nginx-Web-Server" class="headerlink" title="2. Nginx Web Server"></a>2. Nginx Web Server</h4><p>參考往期文章安裝Nginx</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">    listen 443 ssl;</span><br><span class="line">    server_name joplin.EXAMPLE.com;</span><br><span class="line"></span><br><span class="line">    ssl on;</span><br><span class="line">    ssl_certificate /usr/local/nginx/conf/ssl/ssl.pem;</span><br><span class="line">    ssl_certificate_key /usr/local/nginx/conf/ssl/ssl.key;</span><br><span class="line"></span><br><span class="line">    ssl_session_timeout 5m;</span><br><span class="line">    ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:ECDHE:ECDH:AES:HIGH:!NULL:!aNULL:!MD5:!ADH:!RC4;</span><br><span class="line">    ssl_protocols TLSv1 TLSv1.1 TLSv1.2 ;</span><br><span class="line">    ssl_prefer_server_ciphers on;</span><br><span class="line">    location / &#123;</span><br><span class="line">              proxy_pass http://127.0.0.1:22300/;</span><br><span class="line">              proxy_redirect off;</span><br><span class="line">              proxy_set_header Host $host;</span><br><span class="line">              proxy_set_header X-Real-IP $remote_addr;</span><br><span class="line">              proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;</span><br><span class="line"></span><br><span class="line">          &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
 
-<ul>
-<li>/usr/local/nginx/conf/ssl</li>
-</ul>
-<p>存放SSL證書的地方。</p>
+<h4 id="3-docker-compose-配置"><a href="#3-docker-compose-配置" class="headerlink" title="3. docker-compose 配置"></a>3. docker-compose 配置</h4><p><code>vim docker-compose.yml</code></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">version: &#x27;3&#x27;</span><br><span class="line">services:</span><br><span class="line">    db:</span><br><span class="line">        restart: unless-stopped</span><br><span class="line">        image: postgres:13.1</span><br><span class="line">        ports:</span><br><span class="line">            - &quot;5432:5432&quot;</span><br><span class="line">        volumes:</span><br><span class="line">            - /修改為想保存的路徑/joplin-data:/var/lib/postgresql/data</span><br><span class="line">        environment:</span><br><span class="line">            - POSTGRES_PASSWORD=joplin</span><br><span class="line">            - POSTGRES_USER=joplin</span><br><span class="line">            - POSTGRES_DB=joplin</span><br><span class="line">    app:</span><br><span class="line">        environment:</span><br><span class="line">            - APP_BASE_URL=https://修改成自己的網域</span><br><span class="line">            - APP_PORT=22300</span><br><span class="line">            - POSTGRES_PASSWORD=joplin</span><br><span class="line">            - POSTGRES_DATABASE=joplin</span><br><span class="line">            - POSTGRES_USER=joplin </span><br><span class="line">            - POSTGRES_PORT=5432 </span><br><span class="line">            - POSTGRES_HOST=db</span><br><span class="line">            - DB_CLIENT=pg</span><br><span class="line">        restart: unless-stopped</span><br><span class="line">        image: florider89/joplin-server:latest</span><br><span class="line">        ports:</span><br><span class="line">            - &quot;22300:22300&quot;</span><br><span class="line">        depends_on:</span><br><span class="line">            - db</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>修改好自己的參數，就可以啟動docker。</p>
+<p><code>docker-compose up</code></p>
+<p>啟動之後，打開瀏覽器，輸入設定的網址，檢查能不能連到Joplin Server，如果不行的話，可以通過以下指令來反啟動。</p>
+<p><code>docker-compose down</code></p>
+<p>如果一切都沒有問題的話，那我們就可以讓Docker容器在後台執行，這樣我們的Terminal就可以做別的事情了。</p>
+<p><code>docker-compose up -d</code></p>
+<h4 id="更新Joplin-Server"><a href="#更新Joplin-Server" class="headerlink" title="更新Joplin Server"></a>更新Joplin Server</h4><p>首先我們先反啟動Joplin Server。</p>
+<p><code>docker-compose down</code></p>
 <blockquote>
-<p>個人習慣放在這裡，需要自己創建一個ssl的資料夾。</p>
+<p>如果需要修改相關配置，可以編輯docker-compose.yml檔案。 <code>vim docker-compose.yml</code></p>
 </blockquote>
-<h4 id="重新加載Nginx配置"><a href="#重新加載Nginx配置" class="headerlink" title="重新加載Nginx配置"></a>重新加載Nginx配置</h4><p><code>sudo lnmp reload nginx</code></p>
-<p>重新載入</p>
-<p><code>sudo lnmp restart nginx</code></p>
-<p>重新啟動</p>
-<hr>
-<p>以上如此，便完成了最基本的Nginx使用啦。</p>
+<p>一切都準備完以後，就可以重新啟動Joplin Server了。</p>
+<p><code>docker-compose up -d</code></p>
 <h4 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h4><ul>
-<li><a class="link"   target="_blank" rel="noopener" href="https://lnmp.org/" >LNMP 官網<i class="fas fa-external-link-alt"></i></a></li>
+<li><a class="link"   target="_blank" rel="noopener" href="https://discourse.joplinapp.org/t/guide-for-joplin-server-on-raspberry-pi/14702" >Guide for Joplin-Server on Raspberry Pi
+<i class="fas fa-external-link-alt"></i></a></li>
 </ul>
 
         </div>
@@ -297,11 +286,11 @@
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li>本文标题：樹莓派利用Inmp安裝Nginx反代理伺服器</li>
+        <li>本文标题：樹莓派用Docker搭建 Joplin Server</li>
         <li>本文作者：Reg Chien</li>
-        <li>创建时间：2021-09-01 23:19:31</li>
+        <li>创建时间：2021-09-01 23:32:46</li>
         <li>
-            本文链接：https://blog.bs10081.com/2021/09/01/樹莓派利用lnmp安裝Nginx反代理伺服器/
+            本文链接：https://blog.bs10081.com/2021/09/01/樹莓派用Docker搭建 Joplin Server/
         </li>
         <li>
             版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -315,29 +304,14 @@
         
             <div class="article-nav">
                 
-                    <div class="article-prev">
-                        <a class="prev"
-                           rel="prev"
-                           href="/2021/09/01/%E6%A8%B9%E8%8E%93%E6%B4%BE%E7%94%A8Docker%E6%90%AD%E5%BB%BA%20Joplin%20Server/"
-                        >
-                            <span class="left arrow-icon flex-center">
-                              <i class="fas fa-chevron-left"></i>
-                            </span>
-                            <span class="title flex-center">
-                                <span class="post-nav-title-item">樹莓派用Docker搭建 Joplin Server</span>
-                                <span class="post-nav-item">上一篇</span>
-                            </span>
-                        </a>
-                    </div>
-                
                 
                     <div class="article-next">
                         <a class="next"
                            rel="next"
-                           href="/2021/08/11/%E6%A8%B9%E8%8E%93%E6%B4%BE%E6%90%AD%E5%BB%BABitwarden%E5%AF%86%E7%A2%BC%E8%A8%97%E7%AE%A1%E6%9C%8D%E5%8B%99/"
+                           href="/2021/09/01/%E6%A8%B9%E8%8E%93%E6%B4%BE%E5%88%A9%E7%94%A8lnmp%E5%AE%89%E8%A3%9DNginx%E5%8F%8D%E4%BB%A3%E7%90%86%E4%BC%BA%E6%9C%8D%E5%99%A8/"
                         >
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">樹莓派搭建Bitwarden密碼託管服務</span>
+                                <span class="post-nav-title-item">樹莓派利用Inmp安裝Nginx反代理伺服器</span>
                                 <span class="post-nav-item">下一篇</span>
                             </span>
                             <span class="right arrow-icon flex-center">
@@ -447,7 +421,7 @@
         <aside class="page-aside">
             <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%9D"><span class="nav-text">安裝</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%8B%E8%BC%89LNMP"><span class="nav-text">下載LNMP</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Nginx%E8%A8%AD%E5%AE%9A"><span class="nav-text">Nginx設定</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Nginx-%E8%B3%87%E6%96%99%E5%A4%BE%E7%94%A8%E9%80%94"><span class="nav-text">Nginx 資料夾用途</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%87%8D%E6%96%B0%E5%8A%A0%E8%BC%89Nginx%E9%85%8D%E7%BD%AE"><span class="nav-text">重新加載Nginx配置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8F%83%E8%80%83%E8%B3%87%E6%96%99"><span class="nav-text">參考資料</span></a></li></ol></li></ol></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%99%E7%A8%8B"><span class="nav-text">教程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%89%8D%E7%BD%AE%E9%9C%80%E6%B1%82"><span class="nav-text">前置需求</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%AD%A3%E5%BC%8F%E9%96%8B%E5%A7%8B"><span class="nav-text">正式開始</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-docker-%E5%AE%89%E8%A3%9D%E5%8F%8A-docker-compose"><span class="nav-text">1. docker 安裝及 docker-compose</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-Nginx-Web-Server"><span class="nav-text">2. Nginx Web Server</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-docker-compose-%E9%85%8D%E7%BD%AE"><span class="nav-text">3. docker-compose 配置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9B%B4%E6%96%B0Joplin-Server"><span class="nav-text">更新Joplin Server</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8F%83%E8%80%83%E8%B3%87%E6%96%99"><span class="nav-text">參考資料</span></a></li></ol></li></ol></li></ol>
     </div>
 </div>
         </aside>
