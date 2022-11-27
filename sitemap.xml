@@ -1,21 +1,18 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-  xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  <url>
-    <loc>/about/</loc>
-    <lastmod>2022-11-27T04:46:15+08:00</lastmod>
-  </url><url>
-    <loc>/</loc>
-    <lastmod>2021-12-05T13:57:49+08:00</lastmod>
-  </url><url>
-    <loc>/posts/</loc>
-    <lastmod>2021-12-05T13:57:49+08:00</lastmod>
-  </url><url>
-    <loc>/posts/%E9%97%9C%E6%96%BC%E8%BF%91%E6%9C%AA%E4%BE%86%E4%B8%96%E7%95%8C%E7%99%BC%E5%B1%95%E4%B9%8B%E9%9B%9C%E8%AB%87/</loc>
-    <lastmod>2021-12-05T13:57:49+08:00</lastmod>
-  </url><url>
-    <loc>/categories/</loc>
-  </url><url>
-    <loc>/tags/</loc>
-  </url>
-</urlset>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <sitemap>
+    <loc>https://regchien.info/en/sitemap.xml</loc>
+    
+      <lastmod>2022-11-27T00:00:00+00:00</lastmod>
+    
+  </sitemap>
+  
+  <sitemap>
+    <loc>https://regchien.info/zh-tw/sitemap.xml</loc>
+    
+      <lastmod>2022-11-27T00:00:00+00:00</lastmod>
+    
+  </sitemap>
+  
+</sitemapindex>

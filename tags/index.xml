@@ -1,10 +1,67 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Tags on Reg</title>
-    <link>/tags/</link>
-    <description>Recent content in Tags on Reg</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
-  </channel>
+    <channel>
+        <title>Tags on Reg Chien</title>
+        <link>https://regchien.info/tags/</link>
+        <description>Recent content in Tags on Reg Chien</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>en-us</language>
+        <lastBuildDate>Sun, 27 Nov 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://regchien.info/tags/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>kms</title>
+        <link>https://regchien.info/tags/kms/</link>
+        <pubDate>Sun, 27 Nov 2022 00:00:00 +0000</pubDate>
+        
+        <guid>https://regchien.info/tags/kms/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>office</title>
+        <link>https://regchien.info/tags/office/</link>
+        <pubDate>Sun, 27 Nov 2022 00:00:00 +0000</pubDate>
+        
+        <guid>https://regchien.info/tags/office/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>windows</title>
+        <link>https://regchien.info/tags/windows/</link>
+        <pubDate>Sun, 27 Nov 2022 00:00:00 +0000</pubDate>
+        
+        <guid>https://regchien.info/tags/windows/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>blockchain</title>
+        <link>https://regchien.info/tags/blockchain/</link>
+        <pubDate>Sun, 05 Dec 2021 00:00:00 +0000</pubDate>
+        
+        <guid>https://regchien.info/tags/blockchain/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>btc</title>
+        <link>https://regchien.info/tags/btc/</link>
+        <pubDate>Sun, 05 Dec 2021 00:00:00 +0000</pubDate>
+        
+        <guid>https://regchien.info/tags/btc/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>nft</title>
+        <link>https://regchien.info/tags/nft/</link>
+        <pubDate>Sun, 05 Dec 2021 00:00:00 +0000</pubDate>
+        
+        <guid>https://regchien.info/tags/nft/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>web</title>
+        <link>https://regchien.info/tags/web/</link>
+        <pubDate>Sun, 05 Dec 2021 00:00:00 +0000</pubDate>
+        
+        <guid>https://regchien.info/tags/web/</guid>
+        <description></description>
+        </item>
+        
+    </channel>
 </rss>

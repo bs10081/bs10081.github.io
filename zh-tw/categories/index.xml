@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Categories on 笙笙詩詩</title>
+        <link>https://regchien.info/zh-tw/categories/</link>
+        <description>Recent content in Categories on 笙笙詩詩</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>en-us</language>
+        <lastBuildDate>Sun, 27 Nov 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://regchien.info/zh-tw/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Windows</title>
+        <link>https://regchien.info/zh-tw/categories/windows/</link>
+        <pubDate>Sun, 27 Nov 2022 00:00:00 +0000</pubDate>
+        
+        <guid>https://regchien.info/zh-tw/categories/windows/</guid>
+        <description>&lt;img src="https://regchien.info/zh-tw/categories/windows/richard-horvath-_nWaeTF6qo0-unsplash.jpg" alt="Featured image of post Windows" /&gt;</description>
+        </item>
+        <item>
+        <title>NFT</title>
+        <link>https://regchien.info/zh-tw/categories/nft/</link>
+        <pubDate>Sun, 05 Dec 2021 00:00:00 +0000</pubDate>
+        
+        <guid>https://regchien.info/zh-tw/categories/nft/</guid>
+        <description>&lt;img src="https://regchien.info/zh-tw/categories/nft/choong-deng-xiang-tMswAYQgJxk-unsplash.jpg" alt="Featured image of post NFT" /&gt;</description>
+        </item>
+        <item>
+        <title>區塊鏈</title>
+        <link>https://regchien.info/zh-tw/categories/blockchain/</link>
+        <pubDate>Sun, 05 Dec 2021 00:00:00 +0000</pubDate>
+        
+        <guid>https://regchien.info/zh-tw/categories/blockchain/</guid>
+        <description>&lt;img src="https://regchien.info/zh-tw/categories/blockchain/shubham-dhage-v0VjjYYFjOg-unsplash.jpg" alt="Featured image of post 區塊鏈" /&gt;</description>
+        </item>
+        
+    </channel>
+</rss>

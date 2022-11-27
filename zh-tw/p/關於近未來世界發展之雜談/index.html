@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='近未來世界，也就十幾二十年，對於剛活滿18歲的我來說，似乎還有些遙遠，但已經能發現一些端倪…'>
+<title>關於近未來世界發展之雜談</title>
+
+<link rel='canonical' href='https://regchien.info/zh-tw/p/%E9%97%9C%E6%96%BC%E8%BF%91%E6%9C%AA%E4%BE%86%E4%B8%96%E7%95%8C%E7%99%BC%E5%B1%95%E4%B9%8B%E9%9B%9C%E8%AB%87/'>
+
+<link rel="stylesheet" href="/scss/style.min.8191399262444ab68b72a18c97392f5349be20a1615d77445be51e974c144cff.css"><meta property='og:title' content='關於近未來世界發展之雜談'>
+<meta property='og:description' content='近未來世界，也就十幾二十年，對於剛活滿18歲的我來說，似乎還有些遙遠，但已經能發現一些端倪…'>
+<meta property='og:url' content='https://regchien.info/zh-tw/p/%E9%97%9C%E6%96%BC%E8%BF%91%E6%9C%AA%E4%BE%86%E4%B8%96%E7%95%8C%E7%99%BC%E5%B1%95%E4%B9%8B%E9%9B%9C%E8%AB%87/'>
+<meta property='og:site_name' content='笙笙詩詩'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='web' /><meta property='article:tag' content='blockchain' /><meta property='article:tag' content='nft' /><meta property='article:tag' content='btc' /><meta property='article:published_time' content='2021-12-05T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2021-12-05T00:00:00&#43;00:00'/><meta property='og:image' content='https://regchien.info/zh-tw/p/%E9%97%9C%E6%96%BC%E8%BF%91%E6%9C%AA%E4%BE%86%E4%B8%96%E7%95%8C%E7%99%BC%E5%B1%95%E4%B9%8B%E9%9B%9C%E8%AB%87/julien-tromeur-EOSHmMbjT8g-unsplash-scaled.webp' />
+<meta name="twitter:title" content="關於近未來世界發展之雜談">
+<meta name="twitter:description" content="近未來世界，也就十幾二十年，對於剛活滿18歲的我來說，似乎還有些遙遠，但已經能發現一些端倪…"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://regchien.info/zh-tw/p/%E9%97%9C%E6%96%BC%E8%BF%91%E6%9C%AA%E4%BE%86%E4%B8%96%E7%95%8C%E7%99%BC%E5%B1%95%E4%B9%8B%E9%9B%9C%E8%AB%87/julien-tromeur-EOSHmMbjT8g-unsplash-scaled.webp' />
+    <link rel="shortcut icon" href="/favicon.ico" />
+
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切換選單">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/zh-tw">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hu7001c7879c8a3b9f033d7acdac3db7bf_51221_300x0_resize_box_3.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">😶‍🌫️</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/zh-tw">笙笙詩詩</a></h1>
+            <h2 class="site-description">A personal Blog by Reg Chien, record my life and mind.</h2>
+        </div>
+    </header><ol class="social-menu">
+            
+                <li>
+                    <a 
+                        href='https://github.com/bs10081'
+                        target="_blank"
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://twitter.com/regchien'
+                        target="_blank"
+                        title="Twitter"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-twitter" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/zh-tw/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主頁</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-tw/%E9%97%9C%E6%96%BC/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>關於</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-tw/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>存檔</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-tw/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜尋</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-tw/%E5%8F%8B%E9%8F%88/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>友鏈</span>
+            </a>
+        </li>
+        
+
+        <div class="menu-bottom-section">
+                <li id="i18n-switch">  
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                    <select name="language" onchange="window.location.href = this.selectedOptions[0].value">
+                        
+                            <option value="https://regchien.info/" >English</option>
+                        
+                            <option value="https://regchien.info/zh-tw/" selected>中文</option>
+                        
+                    </select>
+                </li>
+            
+            
+            
+                <li id="dark-mode-toggle">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                    <span>夜晚模式</span>
+                </li>
+            
+        </div>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目錄</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#前言">前言</a></li>
+    <li><a href="#影響近未來發展的重要技術">影響近未來發展的重要技術</a>
+      <ol>
+        <li><a href="#web-30">Web 3.0</a></li>
+        <li><a href="#blockchain">Blockchain</a></li>
+      </ol>
+    </li>
+    <li><a href="#區塊鏈為何會是未來影響人類生活的重要技術">區塊鏈為何會是未來影響人類生活的重要技術？</a>
+      <ol>
+        <li><a href="#去中心化">去中心化</a>
+          <ol>
+            <li><a href="#如果技術不能夠下沉會發生什麼">如果技術不能夠下沉，會發生什麼？</a></li>
+            <li><a href="#去中心化對於一般人的影響">去中心化對於一般人的影響</a></li>
+            <li><a href="#去中心化對於個資的影響">去中心化對於個資的影響</a></li>
+            <li><a href="#現階段的個人身份識別">現階段的個人身份識別</a></li>
+            <li><a href="#近未來的個人身份識別">近未來的個人身份識別</a></li>
+          </ol>
+        </li>
+      </ol>
+    </li>
+    <li><a href="#虛擬化世界如何定義資產為什麼物品對我們會有價值">虛擬化世界，如何定義資產，為什麼物品對我們會有價值？</a>
+      <ol>
+        <li><a href="#現實世界中定義資產的方式">現實世界中定義資產的方式</a></li>
+        <li><a href="#元宇宙中定義資產的方式">元宇宙中定義資產的方式</a>
+          <ol>
+            <li><a href="#nft">NFT</a></li>
+          </ol>
+        </li>
+        <li><a href="#bitcoin">Bitcoin</a>
+          <ol>
+            <li><a href="#歷史簡介">歷史簡介</a></li>
+            <li><a href="#經濟價值">經濟價值</a></li>
+          </ol>
+        </li>
+      </ol>
+    </li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="has-image main-article">
+    <header class="article-header">
+        <div class="article-image">
+            <a href="/zh-tw/p/%E9%97%9C%E6%96%BC%E8%BF%91%E6%9C%AA%E4%BE%86%E4%B8%96%E7%95%8C%E7%99%BC%E5%B1%95%E4%B9%8B%E9%9B%9C%E8%AB%87/">
+                <img src="/zh-tw/p/%E9%97%9C%E6%96%BC%E8%BF%91%E6%9C%AA%E4%BE%86%E4%B8%96%E7%95%8C%E7%99%BC%E5%B1%95%E4%B9%8B%E9%9B%9C%E8%AB%87/julien-tromeur-EOSHmMbjT8g-unsplash-scaled_hua3bca5bf26fcb2de10d7b6e23e5c3845_102534_800x0_resize_q75_h2_box_2.webp"
+                        srcset="/zh-tw/p/%E9%97%9C%E6%96%BC%E8%BF%91%E6%9C%AA%E4%BE%86%E4%B8%96%E7%95%8C%E7%99%BC%E5%B1%95%E4%B9%8B%E9%9B%9C%E8%AB%87/julien-tromeur-EOSHmMbjT8g-unsplash-scaled_hua3bca5bf26fcb2de10d7b6e23e5c3845_102534_800x0_resize_q75_h2_box_2.webp 800w, /zh-tw/p/%E9%97%9C%E6%96%BC%E8%BF%91%E6%9C%AA%E4%BE%86%E4%B8%96%E7%95%8C%E7%99%BC%E5%B1%95%E4%B9%8B%E9%9B%9C%E8%AB%87/julien-tromeur-EOSHmMbjT8g-unsplash-scaled_hua3bca5bf26fcb2de10d7b6e23e5c3845_102534_1600x0_resize_q75_h2_box_2.webp 1600w"
+                        width="800" 
+                        height="450" 
+                        loading="lazy"
+                        alt="Featured image of post 關於近未來世界發展之雜談" />
+                
+            </a>
+        </div>
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/zh-tw/categories/nft/" style="background-color: #df7b88; color: #fff;">
+                NFT
+            </a>
+        
+            <a href="/zh-tw/categories/blockchain/" style="background-color: #df7b88; color: #fff;">
+                區塊鏈
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/zh-tw/p/%E9%97%9C%E6%96%BC%E8%BF%91%E6%9C%AA%E4%BE%86%E4%B8%96%E7%95%8C%E7%99%BC%E5%B1%95%E4%B9%8B%E9%9B%9C%E8%AB%87/">關於近未來世界發展之雜談</a>
+        </h2>
+    
+        
+        <h3 class="article-subtitle">
+            近未來世界，也就十幾二十年，對於剛活滿18歲的我來說，似乎還有些遙遠，但已經能發現一些端倪…
+        </h3>
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Dec 05, 2021</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    閱讀時間: 9 分鐘
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+        <footer class="article-translations">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+            <div>
+                
+                    <a href="https://regchien.info/p/in-the-near-future-there-will-be-discussions-about-world-development/" class="link">English</a>
+                
+            </div>
+        </footer>
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <h2 id="前言">前言</h2>
+<p>近未來的理想x狀態，不外乎就是如今沸沸揚揚的Metaverse（元宇宙）以及多數人認為是騙局、會泡沫化的Cryptocurrency（加密貨幣、虛擬貨幣），但是多數人對於加密貨幣的瞭解，僅限於BTC（比特幣）這個名詞，但是對於背後的技術，以及這幾年延伸出來的技術分支一無所知，可在我看來，這些技術以後會滲透到每個人的生活當中。 理想中的效果，也就和一級玩家那部電影裡的畫面相似，不過會有所缺失，這些我們等等會談。</p>
+<h2 id="影響近未來發展的重要技術">影響近未來發展的重要技術</h2>
+<h3 id="web-30">Web 3.0</h3>
+<p>近未來的發展，就不得不提Web 3.0這個概念，讓我們先來看看Web三個時期。</p>
+<ol>
+<li>
+<p>Web 1.0</p>
+<p>網路 &lt; &gt; 人</p>
+</li>
+<li>
+<p>Web 2.0</p>
+<p>人 &lt; &gt; 人</p>
+</li>
+<li>
+<p>Web 3.0</p>
+<p>人&lt; &gt;網路&lt; &gt;人</p>
+</li>
+</ol>
+<p>這麼說起來，其實還是有點難理解，對此，我舉一個例子：</p>
+<p>Web 1.0 是ATM，存在於都市的不同角落，每個人隨時都可以來；這也代表著過往的人們，只能通過固定的臺式機來訪問網路。</p>
+<p>Web 2.0 是網路銀行，我們可以隨時通過手機來對帳號進行轉賬、無卡提領、刷卡、線上消費等等；行動裝置及無線通訊技術的普及讓人們能隨時隨地接入網路。</p>
+<p>Web 3.0 我們自己就是銀行，人和科技的距離進一步縮短，我們自己便是全部，不依賴大企業；區塊鏈技術、Wallet address。</p>
+<p>現在我們知道，Web 3.0 便是將自身融入到網路當中，現今的 Web 2.0 已經很接近了，對於部分人來說，手機比錢包還重要。 在中國，手機取代了錢包、車票、社交、記錄、信用，出門可以不帶錢，但是不能沒帶手機，疫情當頭，健康碼也成為了生活中非常重要的一部分，讓手機與生活更加密不可分。</p>
+<h3 id="blockchain">Blockchain</h3>
+<p><img src="https://cdn.jsdelivr.net/gh/bs10081/image-hosting@master/20211121/launchpresso-h5iazR-wljU-unsplash.2xe4nyhu0uc0.jpeg"
+	
+	
+	
+	loading="lazy"
+	
+		alt="launchpresso-h5iazR-wljU-unsplash"
+	
+	
+></p>
+<p>Web 3.0 終究是一個概念，真正下放到生活中的東西，則是區塊鏈，區塊鏈技術目前在世界範圍內都有了非常廣泛的應用（包括但不限於挖礦），每一個幣背後都代表了一種技術，如VET，利用區塊鏈技術，加速了物流的處理速度，目前和中國大陸的物流公司有了合作，很有前途。</p>
+<h2 id="區塊鏈為何會是未來影響人類生活的重要技術">區塊鏈為何會是未來影響人類生活的重要技術？</h2>
+<p>我們之前說到，Metaverse 是可見的未來趨勢，但是為什麼會和 Blockchain 扯上關係呢？</p>
+<h3 id="去中心化">去中心化</h3>
+<p>Metaverse 一個寄託全球幾十億人口的虛擬世界，不大可能又由一家企業或者是一項服務來構成，所以去中心化，變成為了Metaverse下很重要的一個概念，所以區塊鏈這種去中心化的技術就變得尤為重要。 從歷史的角度來看，生活中非常多的東西，都是從專業領域逐漸走向大眾，以往需要專業的電影機，高昂的成本，才能拍出具有焦內如刀般銳利，焦外如奶油般化開的照片及影片，但是如今，最新的 iPhone 卻通過算法，實時計算出焦段中本不存在的景深，這就是一種技術的下沉。</p>
+<h4 id="如果技術不能夠下沉會發生什麼">如果技術不能夠下沉，會發生什麼？</h4>
+<p>產品面對需求沒辦法滿足的消費者，死板的自上而下的場景結構，這會讓使用者的個性需求有著永恆且無法解決的矛盾。假如這個世界，只發明了固定路線的火車，而沒有能夠到處移動的汽機車，大家短距離出門只能騎馬，可能多數人一輩子都不會認為自己需要用汽車來取代馬，可馬又不能如汽車般的高效的履行區域化的職能。這個時候，就會發生經濟低迷，人們看不清未來的方向，各種泡沫化隨之產生，從本源上來說，用戶需求溢出，可基於舊有邏輯的產品結構卻無法滿足這樣的轉變。</p>
+<h4 id="去中心化對於一般人的影響">去中心化對於一般人的影響</h4>
+<p>去中心化，本質上也是一種技術下沉，雖然對於大多數人的生活來說，並沒有太多的改變，可我們放大了看，中國歷史上，清朝為何最後會滅亡，因為當時的認知侷限於：「除了讀書和耕田什麼都不會。」，所以才會慘遭資本主義碾壓。 如果人們對於網路，僅限於消費者角度，而無法轉變為生產者，那麼這個環境是非常不良好的，會缺少非常多的創新，進而阻止奇異點的發生。</p>
+<h4 id="去中心化對於個資的影響">去中心化對於個資的影響</h4>
+<p>現今，我們的個資，多數都是在大公司手上的，如字節跳動（抖音、TikTok）Meta（Facebook、instagram、Messenger、WhatsApp）騰訊（QQ、微信、WeChat、蝦皮）Google（YouTube、Google Search Engine、Google WorkSpace）這些公司，可能比我們的親人還要瞭解我們，雖然法律規定用戶畫像不能精準到個人，但是這些東西，技術上都是可以實現的，所以我們每個人其實都是在網際網路上裸奔的，沒有什麼隱私可言。</p>
+<p><em>難道這就沒有什麼解決辦法嘛？</em></p>
+<p>肯定有，不過呢，依照目前的環境，個人想要自己搭建各項服務，還是稍有難度的，雖然比起好幾年前來說，已經簡化了非常多的步驟了，以我來說，從曾經數據經常丟失，到如今，想丟失數據都難。</p>
+<p>macOS自帶的 Time Machine 會進行小時為單位的全盤備份，以及自搭建的 Seafile 會對指定資料夾做同步，終端裝置已經淪為了載體，數據不再依賴本機的存儲，隨時的突發意外，都能夠恢復重要資料，並且敏感數據，可以通過 End to End 的加密技術，對保存在自己伺服器上的數據做進一步的保護。</p>
+<p>不過實話實說，現今能從消費者轉向生產者的人其實並不多，因為門檻依舊在，不過這個問題正在漸漸的變淡，隨著家用NAS的逐漸普及，以及IPv6越來越廣泛的運用，未來我們每個人都可以將自己的資料把握在自己的手上。</p>
+<p>言歸正傳，那麼為何去中心化可以解決隱私的問題，這就得說回 Blockchain 的相關運用了。</p>
+<h4 id="現階段的個人身份識別">現階段的個人身份識別</h4>
+<p>當下，我們要怎麼證明我們是這個帳號的擁有者，怎麼區分每個人的所有權，其實很簡單，就是Password，因為有了密碼，所以我們可以證明這個帳號的所有人是誰，不過這意味著，不同的服務商，不同的網站，我們就需要記住不同的密碼，以此來保證帳號的所有權。</p>
+<p>密碼這件事情，本身其實沒有太多的問題，反而是人的問題，以及個別網站的加密問題，我們先說人的問題。</p>
+<h5 id="密碼重複性">密碼重複性</h5>
+<p>多數人來說，多個網站的帳號密碼，都是採用同樣的帳號密碼，一旦其中一個網站出現了數據洩漏，那麼便會是毀滅性的災害，因為一個密碼可以解開所有的帳號，當然有些人可能會對比較重要的網站，採取稍加變化的密碼。</p>
+<h5 id="密碼結構過於簡單">密碼結構過於簡單</h5>
+<p>據研究，多數人的密碼，不外乎是：</p>
+<ol>
+<li>名字拼音縮寫</li>
+<li>生日</li>
+<li>手機號碼</li>
+<li>簡單的單詞</li>
+</ol>
+<p>這些組合，對於有經驗的 Cracker 來說，短至幾秒，長至幾小時，就能夠解開，因為市面上有太多的密碼本了，通過撞庫的方式，就能瞬間解開，更別說真正的 Hacker ，大多數都非常瞭解社會工程學，通過一些社工手段，很輕易的就能破解帳號密碼。</p>
+<h5 id="缺乏使用2fa或2fa過於不安全">缺乏使用2FA或2FA過於不安全</h5>
+<p>什麼是2FA，這個概念就是當你登錄一個服務的時候，需要通過手機驗證碼或者是Email，以或者是通過Yubikey這類的FIDO設備進行2FA驗證。</p>
+<p>不過多數人都沒有啟用2FA，就算有用2FA的人，多半也都是Email認證或者是簡訊驗證碼，這兩種的驗證方式，對於安全性的提升是有限的，只有很少一部分的人，會使用Authy等2FA驗證工具。 安全性比起單純密碼來說，並沒有增加太多。</p>
+<h5 id="網站的安全性參差不齊">網站的安全性參差不齊</h5>
+<p>不是每個網站都可以做到非常好的加密措施，甚至有些網站，在傳輸密碼的時候，還是使用明文傳輸的方式，這樣使得密碼的安全性，形同虛設，通過中間人攻擊，就能夠擷取到使用者的密碼，這對於我們來說，是非常不安全的。</p>
+<h4 id="近未來的個人身份識別">近未來的個人身份識別</h4>
+<p>先前有說到Web 3.0的一個重要的特性，便是我們每個人都變成了網路的一部分，區塊鏈技術的崛起，這也意味著，密碼會淡出時代的舞台，取而代之的是Wallet address，通過非對稱加密的公私鑰，來作為每個人的唯一識別，通過一個私鑰，我們便可以訪問所有的網路節點。</p>
+<h5 id="什麼是非對稱加密">什麼是非對稱加密？</h5>
+<p>在了解非對稱加密之前，我們先來說說對稱加密。</p>
+<p>對稱加密，簡單來說，就像是二戰時期的美蘇，在通過電報傳輸前線戰報的過程中呢，都有被對方攔截的可能性，所以會通過一個密碼本，對電報內容進行加密，不過這個密碼本，一旦落入敵人的手中，便破譯了。 那麼非對稱加密，顧名思義，密碼加密採用非對稱的方式，此加密方式，在業界已經非常成熟了，多為SHA256的Hash值加密。 非對稱加密，會分成兩個密鑰：</p>
+<ol>
+<li>私鑰（Private key）
+<ol>
+<li>負責解密，自己保留，不可洩漏。</li>
+<li>具有唯一性。</li>
+</ol>
+</li>
+<li>公鑰（Public Key）
+<ol>
+<li>負責加密，公開給所有人。</li>
+<li>可無限生成。</li>
+</ol>
+</li>
+</ol>
+<p>當別人給我發送訊息的時候，通過公鑰進行加密，然後再由我通過私鑰進行解密，我發送訊息時同理，雙方互相交換公鑰，私鑰保存在自己手中，這樣便能保證了加密的安全性。</p>
+<h5 id="wallet-address">Wallet address</h5>
+<p>錢包地址，倚靠私鑰所生成的公鑰作為網路對接的依據。</p>
+<p>可無限生成公鑰，理論上，沒有人能知道這是誰，除非自己洩漏資訊。</p>
+<p>所以從技術層面我們可以得知，區塊鏈的世界中，是一個高度匿名環境，當然，這有利有弊，不過我認為利大於弊，畢竟對於我們來說，個資掌握在自己的手上，才會是最好的，恐怖分子永遠會找到隱藏自己的方法。</p>
+<h2 id="虛擬化世界如何定義資產為什麼物品對我們會有價值">虛擬化世界，如何定義資產，為什麼物品對我們會有價值？</h2>
+<p><img src="https://cdn.jsdelivr.net/gh/bs10081/image-hosting@master/20211121/old-money-mJcQSltkdeM-unsplash.6ral3qx68tw0.jpeg"
+	
+	
+	
+	loading="lazy"
+	
+		alt="old-money-mJcQSltkdeM-unsplash"
+	
+	
+></p>
+<h3 id="現實世界中定義資產的方式">現實世界中定義資產的方式</h3>
+<p>假設我手上有兩臺紅色的 iPhone 13，規格皆為128GB，從外表看來，不能說很像，只能說一模一樣。</p>
+<p>那我們該如何定義這兩臺手機的歸屬權，其實很簡單，我們可以通過Apple ID來界定這臺手機的歸屬權。</p>
+<p>當其中一臺iPhone登錄了我的Apple ID，那麼我便可以聲明這臺iPhone為我所有，這臺iPhone對我而言，便有了價值。</p>
+<p>如果我們沒辦法證明某樣物品屬於我們，那麼該物品對於我們來說，便沒有任何的價值意義。</p>
+<h3 id="元宇宙中定義資產的方式">元宇宙中定義資產的方式</h3>
+<h4 id="nft">NFT</h4>
+<p>當前最火紅的鑑別技術，當之無愧的便是 Non-fungible Token（非同質化代幣），那麼為何NFT會成為當下最火紅的技術，甚至熱門到出圈，從幣圈及金融圈脫穎而出，NFT短短一年中，總銷售額翻漲380倍，達到了107億美元。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/bs10081/image-hosting@master/20211121/CleanShot-2021-11-21-at-23.56.16@2x.77f4ogzzeqg0.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="CleanShot-2021-11-21-at-23"
+	
+	
+></p>
+<blockquote>
+<p>NFT 當前最昂貴的作品｜CryptoPunk #7479｜最終售價150 ETH（約 NT$ 18,091,600）</p>
+</blockquote>
+<h5 id="優點">優點</h5>
+<ul>
+<li>唯一性</li>
+<li>透明化</li>
+</ul>
+<h5 id="缺點">缺點</h5>
+<ul>
+<li>多數僅為「數位擁有權」</li>
+<li>部分NFT規定，擁有人不可限制作品的流傳及他人使用</li>
+</ul>
+<h5 id="需要時間的缺失">需要時間的缺失</h5>
+<ul>
+<li>過於新穎，尚無法律約束</li>
+<li>區塊鏈雖能保障每一個NFT都具有唯一性，可NFT製造者可能將同一個或僅有細微差別的作品捆綁不同的NFT，進而多次銷售</li>
+</ul>
+<h3 id="bitcoin">Bitcoin</h3>
+<p><strong>區塊鏈技術的開山始祖</strong></p>
+<h4 id="歷史簡介">歷史簡介</h4>
+<blockquote>
+<p>比特幣由Satoshi Nakamoto（中本聰）於2008年10月31日發表論文，詳細解釋了區塊鏈的技術原理，2009年1月3日，創世區塊誕生，區塊鏈技術在2016年後進入了高速蓬勃發展時期。</p>
+</blockquote>
+<p>👉 <a class="link" href="https://www.wikiwand.com/zh-mo/%e6%af%94%e7%89%b9%e5%b8%81"  target="_blank" rel="noopener"
+    >Wiki傳送門</a></p>
+<h4 id="經濟價值">經濟價值</h4>
+<p>說起bitcoin的經濟價值，得先從 <del>宇宙的起源…呸！</del> Bitcoin的特性開始說起。</p>
+<ul>
+<li>無法追蹤</li>
+</ul>
+<blockquote>
+<p>泛指區塊鏈技術，不包含社工</p>
+</blockquote>
+<ul>
+<li>不可逆</li>
+</ul>
+<blockquote>
+<p>除非竄改者算力超過總算力的50%</p>
+</blockquote>
+<ul>
+<li>限量發行</li>
+</ul>
+<blockquote>
+<p>每四年減半發行，最終發行至2140年，約2100萬枚</p>
+</blockquote>
+<p>根據上述的特性，不難猜到，這簡直就是為了黑市交易而量身打造的啊。</p>
+<p>警方無法追蹤，交易完就能跑路，蕪湖～愛了愛了。</p>
+<p>基於黑市的龐大市場，bitcoin的價值逐年增加，更是在近幾年，區塊鏈技術運用面越加廣泛的時代背景下，單位價值飆升了上百倍。</p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/zh-tw/tags/web/">web</a>
+        
+            <a href="/zh-tw/tags/blockchain/">blockchain</a>
+        
+            <a href="/zh-tw/tags/nft/">nft</a>
+        
+            <a href="/zh-tw/tags/btc/">btc</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.15.6/dist/katex.min.css"integrity="sha256-J&#43;iAE0sgH8QSz9hpcDxXIftnj65JEZgNhGcgReTTK9s="crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.15.6/dist/katex.min.js"integrity="sha256-InsNdER1b2xUewP&#43;pKCUJpkhiqwHgqiPXDlIk7GzBu4="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.15.6/dist/contrib/auto-render.min.js"integrity="sha256-y39Mpg7V3D4lhBX4x6O0bUqTV4pSrfgwEfGKfxkOdgI="crossorigin="anonymous"
+                defer
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+        renderMathInElement(document.querySelector(`.article-content`), {
+            delimiters: [
+                { left: "$$", right: "$$", display: true },
+                { left: "$", right: "$", display: false },
+                { left: "\\(", right: "\\)", display: false },
+                { left: "\\[", right: "\\]", display: true }
+            ]
+        });})
+</script>
+    
+</article>
+
+    
+
+    
+
+     
+    
+        
+    <div class="disqus-container">
+    <div id="disqus_thread"></div>
+<script type="application/javascript">
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "hugo-theme-stack" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+<style>
+    .disqus-container {
+        background-color: var(--card-background);
+        border-radius: var(--card-border-radius);
+        box-shadow: var(--shadow-l1);
+        padding: var(--card-padding);
+    }
+</style>
+
+<script>
+    window.addEventListener('onColorSchemeChange', (e) => {
+        if (typeof DISQUS == 'object') {
+            DISQUS.reset({
+                reload: true
+            });
+        }
+    })
+</script>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2020 - 
+        
+        2022 笙笙詩詩
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.16.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

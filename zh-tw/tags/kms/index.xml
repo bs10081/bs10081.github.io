@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>kms on 笙笙詩詩</title>
+        <link>https://regchien.info/zh-tw/tags/kms/</link>
+        <description>Recent content in kms on 笙笙詩詩</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>en-us</language>
+        <lastBuildDate>Sun, 27 Nov 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://regchien.info/zh-tw/tags/kms/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>官方管道激活微軟 Windows 和 Office，完全免費。</title>
+        <link>https://regchien.info/zh-tw/p/%E5%AE%98%E6%96%B9%E7%AE%A1%E9%81%93%E6%BF%80%E6%B4%BB%E5%BE%AE%E8%BB%9F-windows-%E5%92%8C-office%E5%AE%8C%E5%85%A8%E5%85%8D%E8%B2%BB/</link>
+        <pubDate>Sun, 27 Nov 2022 00:00:00 +0000</pubDate>
+        
+        <guid>https://regchien.info/zh-tw/p/%E5%AE%98%E6%96%B9%E7%AE%A1%E9%81%93%E6%BF%80%E6%B4%BB%E5%BE%AE%E8%BB%9F-windows-%E5%92%8C-office%E5%AE%8C%E5%85%A8%E5%85%8D%E8%B2%BB/</guid>
+        <description>&lt;img src="https://regchien.info/zh-tw/p/%E5%AE%98%E6%96%B9%E7%AE%A1%E9%81%93%E6%BF%80%E6%B4%BB%E5%BE%AE%E8%BB%9F-windows-%E5%92%8C-office%E5%AE%8C%E5%85%A8%E5%85%8D%E8%B2%BB/pedro-santos-hGbomg-e3DM-unsplash.webp" alt="Featured image of post 官方管道激活微軟 Windows 和 Office，完全免費。" /&gt;&lt;h2 id=&#34;preface&#34;&gt;Preface&lt;/h2&gt;
+&lt;p&gt;這個激活方式原理是藉由安裝 Microsoft 官方提供的 VOL（Volume Licensing）版本的 Office，且通過 KMS 激活的方式來獲得正版授權。
+免费激活Windows和Office，完全合法。&lt;/p&gt;
+&lt;h2 id=&#34;準備階段&#34;&gt;準備階段&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/Wind4/vlmcsd&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;KMS Server&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://learn.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj612867%28v=ws.11%29#windows-10&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Windows KMS Client Setup Key&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.microsoft.com/en-us/download/details.aspx?id=49117&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Office Deployment Tool&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://config.office.com/deploymentsettings&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Office Version Customization Tool&lt;/a&gt; or you can download my &lt;a class=&#34;link&#34; href=&#34;https://tfbs.site/office-vol-config&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;config&lt;/a&gt; (Office LTSC 2021 Pro &amp;amp;&amp;amp; Project 2021 LTSC Pro &amp;amp;&amp;amp; Visio 2021 LTSC Pro)&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;激活-windows&#34;&gt;激活 Windows&lt;/h2&gt;
+&lt;p&gt;在激活Windows之前，你要確保你部署好了 KMS Server，如果你不知道怎麼部署的話，可以使用第三方 KMS Server (kms.03k.org)&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;按下 Windows 鍵，輸入 &lt;code&gt;cmd&lt;/code&gt; 選擇通過管理員身份啟動&lt;/li&gt;
+&lt;li&gt;輸入指令 &lt;code&gt;slmgr -skms {Your KMS Server IP}&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;繼續輸入指令&lt;code&gt;slmgr -ipk {Windows KMS Client Setup Key}&lt;/code&gt; (要選擇對應系統的版本)&lt;/li&gt;
+&lt;li&gt;最後，&lt;code&gt;slmgr /ato&lt;/code&gt; 設定自動激活&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;如此一來，就大功告成了。&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&#34;激活-office&#34;&gt;激活 Office&lt;/h2&gt;
+&lt;h3 id=&#34;安裝-office-vol-version&#34;&gt;安裝 Office VOL Version&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;下載 Office Deployment Tool，且運行並同意 ELUA 授權&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;通過 Office Version Customization Tool 來選擇自己需要的配置，或者是通過我的 config 文件來快速安裝&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;複製 配置文件的所在資料夾路徑 (like. C:\User\bs10081\Desktop\office)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;通過管理員身份打開 &lt;code&gt;cmd&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;輸入指令，移動目錄到配置文件資料夾 &lt;code&gt;cd C:\User\bs10081\Desktop\office&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;輸入指令下載 Office &lt;code&gt;setup /download config.xml&lt;/code&gt; (P.S. config.xml 需要替換成你使用 Office Version Customization Tool 導出的檔案名稱，如果是使用我的配置，則不用。)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;安裝 Office &lt;code&gt;setup /configure config.xml&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;輸入指令，移動目錄到 Office 軟體資料夾 &lt;code&gt;cd C:\Program Files \Microsoft Office\Office16&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;設定 KMS Server IP &lt;code&gt;cscript ospp.vbs /sethst:{Your KMS Server IP}&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;激活 Office &lt;code&gt;cscript ospp.vbs /act&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;**這樣便完成了 Office 的安裝與激活。&lt;/p&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>

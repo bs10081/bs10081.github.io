@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>kms on Reg Chien</title>
+        <link>https://regchien.info/tags/kms/</link>
+        <description>Recent content in kms on Reg Chien</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>en-us</language>
+        <lastBuildDate>Sun, 27 Nov 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://regchien.info/tags/kms/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Free activation of Windows &amp; Office , completely legal</title>
+        <link>https://regchien.info/p/free-activation-of-windows-office-completely-legal/</link>
+        <pubDate>Sun, 27 Nov 2022 00:00:00 +0000</pubDate>
+        
+        <guid>https://regchien.info/p/free-activation-of-windows-office-completely-legal/</guid>
+        <description>&lt;img src="https://regchien.info/p/free-activation-of-windows-office-completely-legal/pedro-santos-hGbomg-e3DM-unsplash.webp" alt="Featured image of post Free activation of Windows &amp; Office , completely legal" /&gt;&lt;h2 id=&#34;preface&#34;&gt;Preface&lt;/h2&gt;
+&lt;p&gt;The principle of this activation method is to obtain a genuine license by installing the official VOL (Volume Licensing) version of Office provided by Microsoft and activating it through KMS. Activation of Windows and Office is free and completely legal.&lt;/p&gt;
+&lt;h2 id=&#34;preparation-stage&#34;&gt;Preparation Stage&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/Wind4/vlmcsd&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;KMS Server&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://learn.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj612867%28v=ws.11%29#windows-10&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Windows KMS Client Setup Key&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.microsoft.com/en-us/download/details.aspx?id=49117&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Office Deployment Tool&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://config.office.com/deploymentsettings&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Office Version Customization Tool&lt;/a&gt; or you can download my &lt;a class=&#34;link&#34; href=&#34;https://tfbs.site/office-vol-config&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;config&lt;/a&gt; (Office LTSC 2021 Pro &amp;amp;&amp;amp; Project 2021 LTSC Pro &amp;amp;&amp;amp; Visio 2021 LTSC Pro)&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;activating-windows&#34;&gt;Activating Windows&lt;/h2&gt;
+&lt;p&gt;Before activating Windows, you need to make sure you have KMS Server deployed. If you don&amp;rsquo;t know how to deploy it, you can use a third-party KMS Server (kms.03k.org)&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Press the Windows key, type &lt;code&gt;cmd&lt;/code&gt; and select Start as administrator&lt;/li&gt;
+&lt;li&gt;Enter the command &lt;code&gt;slmgr -skms {Your KMS Server IP}&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Continue to enter the command &lt;code&gt;slmgr -ipk {Windows KMS Client Setup Key}&lt;/code&gt; (to select the corresponding system version)&lt;/li&gt;
+&lt;li&gt;Finally, the &lt;code&gt;slmgr ato&lt;/code&gt; setting is automatically activated&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;activate-office&#34;&gt;Activate Office&lt;/h2&gt;
+&lt;h3 id=&#34;install-office-vol-version&#34;&gt;Install Office VOL Version&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Download the Office Deployment Tool and run and agree to the ELUA license&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Choose your desired configuration through the Office Version Customization Tool, or quickly install it through my config file&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Copy the path to the folder where the configuration file is located (like. C:\User\bs10081\Desktop\office)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Open &lt;code&gt;cmd&lt;/code&gt; as an administrator&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Enter the command to move the directory to the profile folder &lt;code&gt;cd C:\User\bs10081\Desktop\office&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Enter the command to download Office &lt;code&gt;setup download config.xml&lt;/code&gt; (P.S. config.xml needs to be replaced with the file name you exported using the Office Version Customization Tool, but not if you are using my configuration.)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Install Office &lt;code&gt;setup configure config.xml&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Enter the command to move the directory to the Office software folder &lt;code&gt;cd C:\Program Files \Microsoft Office\Office16&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Set KMS Server IP &lt;code&gt;cscript ospp.vbs /sethst:{Your KMS Server IP}&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Activate Office &lt;code&gt;cscript ospp.vbs /act&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>
