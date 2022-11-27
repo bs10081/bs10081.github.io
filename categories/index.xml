@@ -30,6 +30,14 @@
         <guid>https://regchien.info/categories/nft/</guid>
         <description>&lt;img src="https://imgur.com/PQ9p0An.jpg" alt="Featured image of post NFT" /&gt;</description>
         </item>
+        <item>
+        <title>Test</title>
+        <link>https://regchien.info/categories/test/</link>
+        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+        
+        <guid>https://regchien.info/categories/test/</guid>
+        <description>&lt;img src="https://regchien.info/categories/test/hutomo-abrianto-l2jk-uxb1BY-unsplash.jpg" alt="Featured image of post Test" /&gt;</description>
+        </item>
         
     </channel>
 </rss>

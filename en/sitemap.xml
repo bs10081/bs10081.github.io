@@ -272,5 +272,7 @@
                 hreflang="en"
                 href="https://regchien.info/search/"
                 />
+  </url><url>
+    <loc>https://regchien.info/categories/test/</loc>
   </url>
 </urlset>
