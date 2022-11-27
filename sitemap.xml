@@ -2,24 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://blog.bs10081.com/</loc>
-    <lastmod>2022-11-27T02:35:24+08:00</lastmod>
+    <loc>/about/</loc>
+    <lastmod>2022-11-27T04:46:15+08:00</lastmod>
   </url><url>
-    <loc>https://blog.bs10081.com/posts/free_activation_of_windows_office_completely_legal/</loc>
-    <lastmod>2022-11-27T02:35:24+08:00</lastmod>
+    <loc>/</loc>
+    <lastmod>2021-12-05T13:57:49+08:00</lastmod>
   </url><url>
-    <loc>https://blog.bs10081.com/posts/in_the_near_future_there_will_be_discussions_about_world_development/</loc>
-    <lastmod>2021-12-05T03:03:37+08:00</lastmod>
+    <loc>/posts/</loc>
+    <lastmod>2021-12-05T13:57:49+08:00</lastmod>
   </url><url>
-    <loc>https://blog.bs10081.com/posts/</loc>
-    <lastmod>2019-02-24T00:00:00+00:00</lastmod>
+    <loc>/posts/%E9%97%9C%E6%96%BC%E8%BF%91%E6%9C%AA%E4%BE%86%E4%B8%96%E7%95%8C%E7%99%BC%E5%B1%95%E4%B9%8B%E9%9B%9C%E8%AB%87/</loc>
+    <lastmod>2021-12-05T13:57:49+08:00</lastmod>
   </url><url>
-    <loc>https://blog.bs10081.com/about/</loc>
+    <loc>/categories/</loc>
   </url><url>
-    <loc>https://blog.bs10081.com/categories/</loc>
-  </url><url>
-    <loc>https://blog.bs10081.com/pages/</loc>
-  </url><url>
-    <loc>https://blog.bs10081.com/tags/</loc>
+    <loc>/tags/</loc>
   </url>
 </urlset>
