@@ -285,6 +285,18 @@
                 href="https://regchien.info/categories/macos/"
                 />
   </url><url>
+    <loc>https://regchien.info/categories/nintendo-switch/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-tw"
+                href="https://regchien.info/zh-tw/categories/nintendo-switch/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://regchien.info/categories/nintendo-switch/"
+                />
+  </url><url>
     <loc>https://regchien.info/search/</loc>
     <xhtml:link
                 rel="alternate"

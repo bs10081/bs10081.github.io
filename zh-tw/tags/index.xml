@@ -86,6 +86,22 @@
         <guid>https://regchien.info/zh-tw/tags/web/</guid>
         <description></description>
         </item>
+        <item>
+        <title>Nintendo</title>
+        <link>https://regchien.info/zh-tw/tags/nintendo/</link>
+        <pubDate>Thu, 01 Jul 2021 00:00:00 +0000</pubDate>
+        
+        <guid>https://regchien.info/zh-tw/tags/nintendo/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Nintendo-Switch</title>
+        <link>https://regchien.info/zh-tw/tags/nintendo-switch/</link>
+        <pubDate>Thu, 01 Jul 2021 00:00:00 +0000</pubDate>
+        
+        <guid>https://regchien.info/zh-tw/tags/nintendo-switch/</guid>
+        <description></description>
+        </item>
         
     </channel>
 </rss>
