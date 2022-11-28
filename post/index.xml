@@ -66,15 +66,12 @@
 &lt;li&gt;
 &lt;p&gt;Install Office &lt;code&gt;setup configure config.xml&lt;/code&gt;&lt;/p&gt;
 &lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Enter the command to move the directory to the Office software folder &lt;code&gt;cd C:\Program Files \Microsoft Office\Office16&lt;/code&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Set KMS Server IP &lt;code&gt;cscript ospp.vbs /sethst:{Your KMS Server IP}&lt;/code&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Activate Office &lt;code&gt;cscript ospp.vbs /act&lt;/code&gt;&lt;/p&gt;
-&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;activation-office&#34;&gt;Activation Office&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Enter the command to move the directory to the Office software folder &lt;code&gt;cd C:\Program Files \Microsoft Office\Office16&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Set KMS Server IP &lt;code&gt;cscript ospp.vbs /sethst:{Your KMS Server IP}&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Activate Office &lt;code&gt;cscript ospp.vbs /act&lt;/code&gt;&lt;/li&gt;
 &lt;/ol&gt;
 </description>
         </item>

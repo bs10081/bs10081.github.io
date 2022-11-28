@@ -68,15 +68,12 @@
 &lt;li&gt;
 &lt;p&gt;安裝 Office &lt;code&gt;setup /configure config.xml&lt;/code&gt;&lt;/p&gt;
 &lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;輸入指令，移動目錄到 Office 軟體資料夾 &lt;code&gt;cd C:\Program Files \Microsoft Office\Office16&lt;/code&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;設定 KMS Server IP &lt;code&gt;cscript ospp.vbs /sethst:{Your KMS Server IP}&lt;/code&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;激活 Office &lt;code&gt;cscript ospp.vbs /act&lt;/code&gt;&lt;/p&gt;
-&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;激活-office-1&#34;&gt;激活 Office&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;輸入指令，移動目錄到 Office 軟體資料夾 &lt;code&gt;cd C:\Program Files \Microsoft Office\Office16&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;設定 KMS Server IP &lt;code&gt;cscript ospp.vbs /sethst:{Your KMS Server IP}&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;激活 Office &lt;code&gt;cscript ospp.vbs /act&lt;/code&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;**這樣便完成了 Office 的安裝與激活。&lt;/p&gt;
 </description>
